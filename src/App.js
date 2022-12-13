@@ -9,6 +9,7 @@ import BookingsPage from "./pages/Bookings";
 import ConfigurationsPage from "./pages/Configurations";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { ProtectedGestorRoute } from "./components/ProtectedGestorRoute";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route path="/reservas" element={<BookingsPage />} />
           <Route
             path="/config"
-            element={<ProtectedRoute Component={ConfigurationsPage} />}
+            element={<ProtectedGestorRoute Component={ConfigurationsPage} />}
           />
 
           <Route path="*" element={<ErrorPage />} />
