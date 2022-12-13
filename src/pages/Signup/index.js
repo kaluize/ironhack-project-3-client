@@ -4,42 +4,46 @@ import { useNavigate } from "react-router-dom";
 
 export function Signup() {
   const navigate = useNavigate();
+
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    "name":"",
+    "idNumber":"",
+    "email":"",
+    "password":"",
+    "role":"USER",
+    "resources":[],
+    "booking":[],
   });
 
-  const [img, setImg] = useState("");
+  // const [img, setImg] = useState("");
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleImage(e) {
-    setImg(e.target.files[0]);
-  }
+  // function handleImage(e) {
+  //   setImg(e.target.files[0]);
+  // }
 
-  async function handleUpload() {
-    try {
-      const uploadData = new FormData();
-      uploadData.append("picture", img);
+  //async function handleUpload() {
+  //  try {
+  //    const uploadData = new FormData();
+  //    uploadData.append("picture", img);
 
-      const response = await api.post("/upload-image", uploadData);
+  //  const response = await api.post("/upload-image", uploadData);
 
-      return response.data.url;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //    return response.data.url;
+  //  } catch (error) {
+  //    console.log(error);
+  //  }
+  //}
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, img: imgURL });
+      //const imgURL = await handleUpload();
+      await api.post("/user/signup", form /*{ ...form, img: imgURL }*/);
 
       navigate("/login");
     } catch (error) {
@@ -57,8 +61,8 @@ export function Signup() {
         value={form.name}
         onChange={handleChange}
       />
-      <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} />
+{/*       <label htmlFor="formImg">Sua foto de perfil:</label>
+      <input type="file" id="formImg" onChange={handleImage} /> */}
 
       <label htmlFor="formEmail">E-mail:</label>
       <input

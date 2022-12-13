@@ -5,6 +5,8 @@ import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
+import BookingsPage from "./pages/Bookings";
+import ConfigurationsPage from "./pages/Configurations";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
@@ -19,6 +21,11 @@ function App() {
           <Route
             path="/profile"
             element={<ProtectedRoute Component={Profile} />}
+          />
+          <Route path="/reservas" element={<BookingsPage />} />
+          <Route
+            path="/config"
+            element={<ProtectedRoute Component={ConfigurationsPage} />}
           />
 
           <Route path="*" element={<ErrorPage />} />
