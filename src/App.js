@@ -29,6 +29,7 @@ function App() {
             element={<ProtectedGestorRoute Component={ConfigurationsPage} />}
           />
 
+
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>
