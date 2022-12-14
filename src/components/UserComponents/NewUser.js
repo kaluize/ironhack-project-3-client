@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { Row, Col, Container, Form, Button, ThemeProvider, } from "react-bootstrap";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ export function Signup() {
     "idNumber":"",
     "email":"",
     "password":"",
+    "confirmPassword":"",
     "role":"USER",
     "resources":[],
     "booking":[],
@@ -80,7 +82,7 @@ export function Signup() {
         value={form.password}
         onChange={handleChange}
       />
-      <label htmlFor="formConfirmPassword">Confirmação de senha</label>
+      <label htmlFor="formConfirmPassword">Confirmação de senha:</label>
       <input
         id="formConfirmPassword"
         type="password"

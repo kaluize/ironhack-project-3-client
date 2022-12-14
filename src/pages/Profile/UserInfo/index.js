@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../api/api";
+import axios from "axios";
 
 export function UserInfo() {
   const [user, setUser] = useState({ name: "", email: "" });
   const navigate = useNavigate();
   useEffect(() => {
     async function fetchUser() {
-      const response = await api.get("/user/profile");
+      const response = await axios.get("/user/profile");
       setUser(response.data);
     }
 

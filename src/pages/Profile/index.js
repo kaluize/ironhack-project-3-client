@@ -7,17 +7,16 @@ import { UserInfo } from "./UserInfo";
 import { ProtectedRoute } from "../../components/ProtectedRoute";
 import { ProtectedGestorRoute } from "../../components/ProtectedGestorRoute";
 import { Routes, Route } from "react-router-dom";
-import { AuthContextComponent } from "./contexts/authContext";
 
 
-function Profile() {
+
+export function Profile() {
   
   return (
     
     <>
       <h1>Barra de navegação à esquerda e janela com info à direita</h1>
 
-      <AuthContextComponent>
         <Routes>
           <Route
             path="/meus-dados"
@@ -33,12 +32,10 @@ function Profile() {
           />
          
         </Routes>
-      </AuthContextComponent>
+
 
     </>
 
 
   );
 }
-
-export default Profile;
