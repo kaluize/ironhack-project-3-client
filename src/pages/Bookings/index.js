@@ -5,33 +5,45 @@ import { Card, Button, Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
 function BookingsPage() {
-
   const [formBusca, setFormBusca] = useState({
-    buscarRecurso: ""
+    buscarRecurso: "",
   });
 
   const [resources, setResources] = useState([]);
 
   const [reload, setReload] = useState(false);
 
-
-  async function handleChange(e) {
-    e.preventDefault();
-    try {
-      await api.get("/resource/all-resource", formBusca);
-      setReload(!reload);
-      setFormBusca({
-        buscarRecurso: ""
-      });
-    } catch (error) {
-      console.log(error);
-      alert("Erro ao buscar recurso");
+  useEffect(() => {
+    async function fetchResources() {
+      try {
+        const response = await api.get("/resource/all-resource");
+        setFormBusca(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
+    fetchResources();
+  }, [reload]);
+
+  function handleSearch(e) {
+    setFormBusca({ ...formBusca, [e.target.name]: e.target.value });
   }
 
-  //Nova reserva
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   try {
+  //     await api.get("/resource/all-resource", formBusca);
+  //     setReload(!reload);
+  //     setFormBusca({
+  //       buscarRecurso: "",
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //     alert("Erro ao buscar recurso");
+  //   }
+  // }
 
- 
+  //Nova reserva
 
   //Listar os recursos escolhidos
 
@@ -50,7 +62,7 @@ function BookingsPage() {
       <h1>Nova reserva</h1>
       {/*Escolher o recurso*/}
       <Container className="border rounded mt-3">
-      <Form>
+        <Form>
           <Form.Group className="mt-3">
             <Form.Label>Escolha o recurso</Form.Label>
             <Form.Control
@@ -58,17 +70,16 @@ function BookingsPage() {
               placeholder="Buscar pelo nome ou tipo do recurso"
               name="buscarRecurso"
               value={formBusca.buscarRecurso}
-              onChange={handleChange}
+              onChange={handleSearch}
             />
           </Form.Group>
-          <Button variant="primary" className="m-3" onClick={handleSubmit}>
+          {/* <Button variant="primary" className="m-3" onClick={handleSubmit}>
             Buscar
-          </Button>
+          </Button> */}
         </Form>
       </Container>
-      
     </div>
-    );
+  );
 }
 
 export default BookingsPage;
