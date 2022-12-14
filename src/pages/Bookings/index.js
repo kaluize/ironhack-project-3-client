@@ -1,5 +1,4 @@
 function BookingsPage() {
-
   //Nova reserva
 
   //Escolher o recurso
