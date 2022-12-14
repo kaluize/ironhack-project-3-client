@@ -8,6 +8,7 @@ import { ErrorPage } from "./pages/ErrorPage";
 import BookingsPage from "./pages/Bookings";
 import ConfigurationsPage from "./pages/Configurations";
 
+
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { ProtectedGestorRoute } from "./components/ProtectedGestorRoute";
 
