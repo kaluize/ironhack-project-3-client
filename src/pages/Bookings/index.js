@@ -13,19 +13,35 @@ function BookingsPage() {
 
   const [reload, setReload] = useState(false);
 
-  async function handleChange(e) {
-    e.preventDefault();
-    try {
-      await api.get("/resource/all-resource", formBusca);
-      setReload(!reload);
-      setFormBusca({
-        buscarRecurso: "",
-      });
-    } catch (error) {
-      console.log(error);
-      alert("Erro ao buscar recurso");
+  useEffect(() => {
+    async function fetchResources() {
+      try {
+        const response = await api.get("/resource/all-resource");
+        setFormBusca(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
+    fetchResources();
+  }, [reload]);
+
+  function handleSearch(e) {
+    setFormBusca({ ...formBusca, [e.target.name]: e.target.value });
   }
+
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+  //   try {
+  //     await api.get("/resource/all-resource", formBusca);
+  //     setReload(!reload);
+  //     setFormBusca({
+  //       buscarRecurso: "",
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //     alert("Erro ao buscar recurso");
+  //   }
+  // }
 
   //Nova reserva
 
@@ -54,12 +70,12 @@ function BookingsPage() {
               placeholder="Buscar pelo nome ou tipo do recurso"
               name="buscarRecurso"
               value={formBusca.buscarRecurso}
-              onChange={handleChange}
+              onChange={handleSearch}
             />
           </Form.Group>
-          <Button variant="primary" className="m-3" onClick={handleSubmit}>
+          {/* <Button variant="primary" className="m-3" onClick={handleSubmit}>
             Buscar
-          </Button>
+          </Button> */}
         </Form>
       </Container>
     </div>
