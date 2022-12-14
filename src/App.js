@@ -6,6 +6,7 @@ import { Profile } from "./pages/Profile/index.js";
 import { ErrorPage } from "./pages/ErrorPage/index.js";
 import BookingsPage from "./pages/Bookings/index.js";
 import ConfigurationsPage from "./pages/Configurations/index.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { ProtectedRoute } from "./components/ProtectedRoute/index.js";
 import { ProtectedGestorRoute } from "./components/ProtectedGestorRoute/index.js";

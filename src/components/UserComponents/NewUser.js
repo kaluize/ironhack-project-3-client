@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import { Row, Col, Container, Form, Button, ThemeProvider, } from "react-bootstrap";
+import { Row, Col, Container, Form, Button, ThemeProvider, FormLabel, FormControl } from "react-bootstrap";
 
-export function Signup() {
-  const navigate = useNavigate();
+function NewUser({handleClose}) {
 
   const [form, setForm] = useState({
     "name":"",
@@ -47,50 +46,76 @@ export function Signup() {
       //const imgURL = await handleUpload();
       await api.post("/user/signup", form /*{ ...form, img: imgURL }*/);
 
-      navigate("/login");
+      handleClose()
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label>
-      <input
-        id="formName"
-        name="name"
-        type="text"
-        value={form.name}
-        onChange={handleChange}
+    <ThemeProvider
+    breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
+    minBreakpoint="xxs"
+  >
+    <Container fluid="md">
+      <Row>
+        <Col>
+          <Form.Label>Nome:</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Form.Label>e-mail:</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <FormLabel>Senha:</FormLabel>
+          <FormControl
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            />
+        </Col>
+        <Col>
+          <FormLabel>Confirmar Senha:</FormLabel>
+          <FormControl
+            type="password"
+            name="confirmPassword"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            />
+        </Col>            
+      </Row>
+      <Row>
+        <Col>
+          <FormLabel>Foto:</FormLabel>
+          <FormControl
+            type="file"
+          />
+        </Col>
+      </Row>
+      <Button
+        as="input"
+        type="submit"
+        value="Novo Usuário"
+        onClick={handleSubmit}
       />
-{/*       <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} /> */}
-
-      <label htmlFor="formEmail">E-mail:</label>
-      <input
-        id="formEmail"
-        name="email"
-        type="email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      <label htmlFor="formPassword">Senha:</label>
-      <input
-        id="formPassword"
-        name="password"
-        type="password"
-        value={form.password}
-        onChange={handleChange}
-      />
-      <label htmlFor="formConfirmPassword">Confirmação de senha:</label>
-      <input
-        id="formConfirmPassword"
-        type="password"
-        name="confirmPassword"
-        value={form.confirmPassword}
-        onChange={handleChange}
-      />
-      <button type="submit">Cadastrar</button>
-    </form>
-  );
+    </Container>
+  </ThemeProvider>);
 }
+
+export default NewUser;
