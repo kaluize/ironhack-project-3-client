@@ -77,7 +77,21 @@ function BookingsPage() {
             Buscar
           </Button> */}
         </Form>
-        <Card></Card>
+        {resources.map((resource) => {
+          return (
+            <Card key={resource._id} className="m-4">
+              <Card.Body>
+                <img src="" alt={resource.name} />
+                <h3>{resource.name}</h3>
+              </Card.Body>
+              <Card.Footer>
+                <Link to="/booking/availability">
+                  <Button>Reservar</Button>
+                </Link>
+              </Card.Footer>
+            </Card>
+          );
+        })}
       </Container>
     </div>
   );
