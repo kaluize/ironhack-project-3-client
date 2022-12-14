@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import ModalNewUser from "../../components/UserComponents/NewUserModal";
 
 export function Login() {
   const [form, setForm] = useState({
@@ -49,6 +50,7 @@ export function Login() {
         onChange={handleChange}
       />
       <button type="submit">Entrar!</button>
+      <ModalNewUser />
     </form>
   );
 }
