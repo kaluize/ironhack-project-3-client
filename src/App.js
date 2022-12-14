@@ -1,15 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { Login } from "./pages/Login";
-import { Signup } from "./pages/Signup";
+import { Home } from "./pages/Home/index.js";
+import { Login } from "./pages/Login/index.js";
 import { AuthContextComponent } from "./contexts/authContext";
-import { Profile } from "./pages/Profile";
-import { ErrorPage } from "./pages/ErrorPage";
-import BookingsPage from "./pages/Bookings";
-import ConfigurationsPage from "./pages/Configurations";
+import { Profile } from "./pages/Profile/index.js";
+import { ErrorPage } from "./pages/ErrorPage/index.js";
+import BookingsPage from "./pages/Bookings/index.js";
+import ConfigurationsPage from "./pages/Configurations/index.js";
 
-import { ProtectedRoute } from "./components/ProtectedRoute";
-import { ProtectedGestorRoute } from "./components/ProtectedGestorRoute";
+import { ProtectedRoute } from "./components/ProtectedRoute/index.js";
+import { ProtectedGestorRoute } from "./components/ProtectedGestorRoute/index.js";
 
 function App() {
   return (
