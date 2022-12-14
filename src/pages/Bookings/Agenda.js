@@ -49,7 +49,7 @@ function Agenda({ resourceId }) {
               {/** consultar a rota /booking/availability e passar resourceId e data */}
               <p>id do resource: {resourceId}</p>
               <p>data escolhida: {form.data}</p>
-              
+              <Horarios resourceId={resourceId} data={form.data}/>
             </Col>
           </Form>
         </Modal.Body>
