@@ -5,17 +5,13 @@ import { Card, Button, Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
 function BookingsPage() {
-<<<<<<< HEAD
-=======
-
   const [formBusca, setFormBusca] = useState({
-    buscarRecurso: ""
+    buscarRecurso: "",
   });
 
   const [resources, setResources] = useState([]);
 
   const [reload, setReload] = useState(false);
-
 
   async function handleChange(e) {
     e.preventDefault();
@@ -23,7 +19,7 @@ function BookingsPage() {
       await api.get("/resource/all-resource", formBusca);
       setReload(!reload);
       setFormBusca({
-        buscarRecurso: ""
+        buscarRecurso: "",
       });
     } catch (error) {
       console.log(error);
@@ -31,10 +27,7 @@ function BookingsPage() {
     }
   }
 
->>>>>>> 02247363a168a114b45831536dc09fb2ec08acca
   //Nova reserva
-
- 
 
   //Listar os recursos escolhidos
 
@@ -53,7 +46,7 @@ function BookingsPage() {
       <h1>Nova reserva</h1>
       {/*Escolher o recurso*/}
       <Container className="border rounded mt-3">
-      <Form>
+        <Form>
           <Form.Group className="mt-3">
             <Form.Label>Escolha o recurso</Form.Label>
             <Form.Control
@@ -69,9 +62,8 @@ function BookingsPage() {
           </Button>
         </Form>
       </Container>
-      
     </div>
-    );
+  );
 }
 
 export default BookingsPage;
