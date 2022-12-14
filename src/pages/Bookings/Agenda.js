@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Col, Form } from "react-bootstrap";
+import Horarios from "./Horarios"
 
 function Agenda({ resourceId }) {
   const [show, setShow] = useState(false);
@@ -7,15 +8,18 @@ function Agenda({ resourceId }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [isDate, setIsDate] = useState(false);
+
   const [form, setForm] = useState({
     data: "",
     horario: ""
   });
 
   function handleChange(e) {
-    setForm(e.target.value);
+    setForm({[e.target.name]: e.target.value});
+    setIsDate(true);
   }
-
+  console.log(form);
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -28,13 +32,14 @@ function Agenda({ resourceId }) {
         </Modal.Header>
         <Modal.Body>
           <Form>
+          {/** Escolher a data a ser reservada */}
             <Col>
               <Form.Group className="mb-3">
               <Form.Label>Data:</Form.Label>
               <Form.Control
                 type="date"
                 name="data"
-                value={form.date}
+                value={form.data}
                 onChange={handleChange}
               />
               </Form.Group>
@@ -42,6 +47,8 @@ function Agenda({ resourceId }) {
             <Col>
               <h2>Horários Disponíveis</h2>
               {/** consultar a rota /booking/availability e passar resourceId e data */}
+              <p>id do resource: {resourceId}</p>
+              <p>data escolhida: {form.data}</p>
               
             </Col>
           </Form>
