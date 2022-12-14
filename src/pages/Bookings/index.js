@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, Routes, Route, Link } from "react-router-dom";
-import axios from "axios";
 import { Card, Button, Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
+import Agenda from "./Agenda"
 
 function BookingsPage() {
   const [search, setSearch] = useState("");
@@ -12,6 +12,8 @@ function BookingsPage() {
   const [reload, setReload] = useState(false);
 
   const [isLoading, setIsLoading] = useState(true);
+
+  
 
   useEffect(() => {
     async function fetchResources() {
@@ -44,16 +46,6 @@ function BookingsPage() {
   //   }
   // }
 
-  //Nova reserva
-
-  //Listar os recursos escolhidos
-
-  //Escolher a data a ser reservada
-
-  //Buscar horários disponíveis
-
-  //Escolher o horario
-
   //Montar data com horario
 
   //Salvar booking
@@ -79,7 +71,9 @@ function BookingsPage() {
           {/* <Button variant="primary" className="m-3" onClick={handleSubmit}>
             Buscar
           </Button> */}
+
         </Form>
+        {/** Listar os recursos escolhidos */}
         {!isLoading &&
           resources
             .filter(
@@ -97,9 +91,7 @@ function BookingsPage() {
                     <h3>{resource.name}</h3>
                   </Card.Body>
                   <Card.Footer>
-                    <Link to="/booking/availability">
-                      <Button>Reservar</Button>
-                    </Link>
+                    <Agenda resourceId={resource._id} />
                   </Card.Footer>
                 </Card>
               );
