@@ -5,9 +5,7 @@ import { Card, Button, Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
 function BookingsPage() {
-  const [formBusca, setFormBusca] = useState({
-    buscarRecurso: "",
-  });
+  const [formBusca, setFormBusca] = useState("");
 
   const [resources, setResources] = useState([]);
 
@@ -17,7 +15,7 @@ function BookingsPage() {
     async function fetchResources() {
       try {
         const response = await api.get("/resource/all-resource");
-        setFormBusca(response.data);
+        setResources(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +24,7 @@ function BookingsPage() {
   }, [reload]);
 
   function handleSearch(e) {
-    setFormBusca({ ...formBusca, [e.target.name]: e.target.value });
+    setFormBusca(e.target.value);
   }
 
   // async function handleSubmit(e) {
@@ -57,6 +55,8 @@ function BookingsPage() {
 
   //Salvar booking
 
+  console.log(resources);
+
   return (
     <div>
       <h1>Nova reserva</h1>
@@ -77,6 +77,7 @@ function BookingsPage() {
             Buscar
           </Button> */}
         </Form>
+        <Card></Card>
       </Container>
     </div>
   );
