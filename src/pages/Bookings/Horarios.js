@@ -4,7 +4,6 @@ import { Card, Button, Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
 function Horarios({ resourceId, data }) {
-
   const [freeHours, setFreeHours] = useState([]);
 
   const [reload, setReload] = useState(false);
@@ -14,10 +13,11 @@ function Horarios({ resourceId, data }) {
   useEffect(() => {
     async function fetchFreeHours() {
       try {
-        const response = await api.
-          get("/booking/availability", 
-            {resource:resourceId},
-            {schedule: data});
+        const response = await api.get(
+          "/booking/availability",
+          { resource: resourceId },
+          { schedule: data }
+        );
         setFreeHours(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -27,8 +27,7 @@ function Horarios({ resourceId, data }) {
     fetchFreeHours();
   }, [reload]);
 
-  return ( 
-    
+  return (
     <div>
       {/*Escolher o horario*/}
       {/* <Container className="border rounded mt-3">
@@ -51,7 +50,7 @@ function Horarios({ resourceId, data }) {
         </Form>
       </Container>
       */}
-    </div> 
+    </div>
   );
 }
 
