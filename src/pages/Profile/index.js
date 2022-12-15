@@ -3,7 +3,6 @@ import MyResources from "./MyResources";
 import { UserInfo } from "./UserInfo";
 import AllUsers from "./AllUsers";
 import { ProtectedRoute } from "../../components/ProtectedRoute";
-import { ProtectedGestorRoute } from "../../components/ProtectedGestorRoute";
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -43,6 +42,6 @@ export function Profile() {
           element={<ProtectedRoute Component={MyResources} />}
         />
       </Routes>
-    </div>
+    </divdiv>
   );
 }
