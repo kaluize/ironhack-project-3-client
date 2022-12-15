@@ -1,8 +1,23 @@
+import "./index.css";
+import johnTravolta from "./images/confused-john-travolta.gif";
+
+
 export function ErrorPage() {
     return (
-      <img
-        src="https://thumbor.forbes.com/thumbor/711x476/https://blogs-images.forbes.com/zarastone/files/2017/05/Waffles-The-Dog-Amazon-1200x804.jpg?width=960"
-        alt="Error"
-      />
+      <div class="errorPage">
+
+        <div>
+        <img src={johnTravolta} alt="john"/>
+         </div>
+
+        <div class="texto">
+          <h1>Oops!</h1> 
+          <h1>Página não encontrada.</h1>
+          <br></br>
+          <p>Infelizmente não encontramos o endereço que você procura.</p>
+          <p>Confira a URL ou retorne à página inicial.</p>
+          <a class="navigation" href="/">Home</a>
+    </div>
+      </div>
     );
   }
