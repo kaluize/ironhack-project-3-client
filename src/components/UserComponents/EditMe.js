@@ -8,7 +8,6 @@ function EditUser({handleClose, user}) {
     "name":user.name,
     "idNumber":user.idNumber,
     "email":user.email,
-    "role":user.role,
   });
 
   // const [img, setImg] = useState("");
@@ -87,20 +86,7 @@ function EditUser({handleClose, user}) {
             onChange={handleChange}
             placeholder={user.idNumber}
             />
-        </Col>
-        <Col>
-          <FormLabel>Tipo:</FormLabel>
-          <Form.Select
-            name="role"
-            value={form.role}
-            onChange={handleChange}
-            >
-                <option value={user.role}>{user.role}</option>
-                <option value="USER">Usuário</option>
-                <option value="GESTOR">Gestor</option>
-                
-            </Form.Select>
-        </Col>              
+        </Col>       
       </Row>
       <Button
         as="input"

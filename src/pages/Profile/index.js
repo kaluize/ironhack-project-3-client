@@ -22,7 +22,7 @@ export function Profile() {
           />
           <Route
             path="/todos"
-            element={<AllUsers />/*<ProtectedRoute Component={UserInfo} />*/}
+            element={<ProtectedGestorRoute Component={AllUsers} />}
           />
           <Route
             path="/minhas-reservas"
@@ -30,7 +30,7 @@ export function Profile() {
           />
           <Route
             path="/meus-recursos"
-            element={<ProtectedGestorRoute Component={MyResources} />}
+            element={<ProtectedRoute Component={MyResources} />}
           />
          
         </Routes>

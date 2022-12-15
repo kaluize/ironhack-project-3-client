@@ -108,14 +108,6 @@ function NewUser({handleClose}) {
             />
         </Col>            
       </Row>
-      <Row>
-        <Col>
-          <FormLabel>Foto:</FormLabel>
-          <FormControl
-            type="file"
-          />
-        </Col>
-      </Row>
       <Button
         as="input"
         type="submit"

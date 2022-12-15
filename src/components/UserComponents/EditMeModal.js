@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import EditUser from "./EditUser.js"
+import EditMe from "./EditMe.js"
 
-function EditUserModal({user}) {
+function EditMeModal({user}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -16,10 +16,10 @@ function EditUserModal({user}) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Editar Usuário</Modal.Title>
+          <Modal.Title>Editar Meu Perfil</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <EditUser
+          <EditMe
             handleClose={handleClose}
             user={user}
           />
@@ -34,4 +34,4 @@ function EditUserModal({user}) {
   );
 }
 
-export default EditUserModal;
+export default EditMeModal;
