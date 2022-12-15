@@ -42,6 +42,6 @@ export function Profile() {
           element={<ProtectedRoute Component={MyResources} />}
         />
       </Routes>
-    </divdiv>
+    </div>
   );
 }
