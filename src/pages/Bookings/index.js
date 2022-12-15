@@ -1,23 +1,26 @@
 import { useEffect, useState } from "react";
 import { useParams, Routes, Route, Link } from "react-router-dom";
-import axios from "axios";
 import { Card, Button, Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
+import Agenda from "./Agenda"
 
 function BookingsPage() {
-  const [formBusca, setFormBusca] = useState({
-    buscarRecurso: "",
-  });
+  const [search, setSearch] = useState("");
 
   const [resources, setResources] = useState([]);
 
   const [reload, setReload] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  
+
   useEffect(() => {
     async function fetchResources() {
       try {
         const response = await api.get("/resource/all-resource");
-        setFormBusca(response.data);
+        setResources(response.data);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +29,7 @@ function BookingsPage() {
   }, [reload]);
 
   function handleSearch(e) {
-    setFormBusca({ ...formBusca, [e.target.name]: e.target.value });
+    setSearch(e.target.value);
   }
 
   // async function handleSubmit(e) {
@@ -43,19 +46,11 @@ function BookingsPage() {
   //   }
   // }
 
-  //Nova reserva
-
-  //Listar os recursos escolhidos
-
-  //Escolher a data a ser reservada
-
-  //Buscar horários disponíveis
-
-  //Escolher o horario
-
   //Montar data com horario
 
   //Salvar booking
+
+  console.log(resources);
 
   return (
     <div>
@@ -69,14 +64,38 @@ function BookingsPage() {
               type="text"
               placeholder="Buscar pelo nome ou tipo do recurso"
               name="buscarRecurso"
-              value={formBusca.buscarRecurso}
+              value={search.buscarRecurso}
               onChange={handleSearch}
             />
           </Form.Group>
           {/* <Button variant="primary" className="m-3" onClick={handleSubmit}>
             Buscar
           </Button> */}
+
         </Form>
+        {/** Listar os recursos escolhidos */}
+        {!isLoading &&
+          resources
+            .filter(
+              (resource) =>
+                resource.name.toLowerCase().includes(search.toLowerCase()) ||
+                resource.resourceType
+                  .toLowerCase()
+                  .includes(search.toLowerCase())
+            )
+            .map((resource) => {
+              return (
+                <Card key={resource._id} className="m-4">
+                  <Card.Body>
+                    <img src="" alt={resource.name} />
+                    <h3>{resource.name}</h3>
+                  </Card.Body>
+                  <Card.Footer>
+                    <Agenda resourceId={resource._id} />
+                  </Card.Footer>
+                </Card>
+              );
+            })}
       </Container>
     </div>
   );

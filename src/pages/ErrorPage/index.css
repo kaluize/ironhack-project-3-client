@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300);
+
+
+.errorPage {
+    background-color: #335B67;
+	background: radial-gradient(ellipse at center, #335B67 0%, #2C3E50 100%) fixed no-repeat;  
+    font-family: 'Source Sans Pro', sans-serif;
+	-webkit-font-smoothing: antialiased;
+    color: white;
+	margin: 0px;  
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}
+
+.johnTravolta {
+    background-image: johnTravolta,
+
+}
+.texto {
+	float: right;
+	max-width: 45%;
+	font-weight: 300;
+	font-size: 18px;
+	padding-bottom: 40px;
+	line-height: 28px;
+}
+
+.texto h1 {
+	margin: 0px;
+	font-weight: 400;
+	font-size: 42px;
+	margin-bottom: 20px;
+    margin-top: 40px;
+	line-height: normal;
+}
+
+.navigation {
+        display: block;
+        float: left;
+        background-color: rgba(0,0,0,0.2);
+        padding-left: 15px;
+        padding-right: 15px;
+        color: white;
+        height: 41px;
+        line-height: 41px;
+        text-decoration: none;
+        font-size: 16px;
+        transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        margin-top: 30px;
+        border-bottom: none;
+    }
+
+    .navigation:hover {
+        background-color: rgba(26,188,156,0.7);
+        border-bottom: none;
+        color: white;
+    }

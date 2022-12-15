@@ -19,14 +19,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route
-            path="/profile/*"
-            element={<Profile />/*<ProtectedRoute Component={Profile} />*/}
+            path="/profile"
+            // element={<ProtectedRoute Component={Profile} />}
+            element={<Profile />}
           />
           <Route path="/reservas" element={<BookingsPage />} />
           <Route
             path="/config"
             element={<ProtectedGestorRoute Component={ConfigurationsPage} />}
           />
+
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
