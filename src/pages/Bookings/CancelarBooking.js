@@ -26,7 +26,7 @@ function CancelarBooking( { bookingId, agendamento, setReload }) {
 
   return ( 
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="danger" onClick={handleShow}>
           Cancelar
       </Button>
 

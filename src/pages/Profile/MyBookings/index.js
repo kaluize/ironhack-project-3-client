@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, Container, Form } from "react-bootstrap";
 import { api } from "../../../api/api";
 import CancelarBooking from "../../Bookings/CancelarBooking";
+import EditarBooking from "../../Bookings/EditarBooking";
 
 
 function MyBookings() {
@@ -41,13 +42,20 @@ function MyBookings() {
                 <Card key={booking._id} className="m-4">
                   <Card.Body>
                     <h3>{booking.resource.name}</h3>
-                    <p>Horário reservado:</p>
-                    <p>{booking.schedule}</p>
+                    <p>Horário reservado: {booking.schedule}</p>
+                    <p><i>Status: {booking.status}</i></p>
                   </Card.Body>
                   <Card.Footer>
                     <CancelarBooking 
                       bookingId={booking._id} 
                       agendamento={`${booking.resource.name} em ${booking.schedule}`}
+                      setReload={setReload}
+                      />
+                    <EditarBooking 
+                      bookingId={booking._id}
+                      agendamento={`${booking.resource.name} em ${booking.schedule}`}
+                      resourceId={booking.resource._id}
+                      gestorId={booking.gestor}
                       setReload={setReload}
                       />
                   </Card.Footer>
