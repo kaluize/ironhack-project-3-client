@@ -38,7 +38,7 @@ function Agenda({ resourceId, gestorId }) {
       alert("Agendamento realizado!");
     } catch (error) {
       alert("Algo deu errado!");
-      
+
     }
   }
 
