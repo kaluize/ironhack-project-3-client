@@ -1,14 +1,19 @@
 import { useState } from "react";
+import useContext from "react";
 import { api } from "../../api/api";
 import { Row, Col, Container, Form, Button, ThemeProvider, FormLabel, FormControl } from "react-bootstrap";
+import { AuthContext } from "../../contexts/authContext.js";
 
-function EditUser({handleClose, user}) {
+
+function EditUser({handleClose}) {
+
+  const { loggedInUser } = useContext(AuthContext);
 
   const [form, setForm] = useState({
-    "name":user.name,
-    "idNumber":user.idNumber,
-    "email":user.email,
-    "role":user.role,
+    "name":loggedInUser.user.name,
+    "idNumber":loggedInUser.user.idNumber,
+    "email":loggedInUser.user.email,
+    "role":loggedInUser.user.role,
   });
 
   // const [img, setImg] = useState("");
@@ -39,7 +44,7 @@ function EditUser({handleClose, user}) {
 
     try {
       //const imgURL = await handleUpload();
-      await api.put(`/user/edit-any/${user._id}`, form /*{ ...form, img: imgURL }*/);
+      await api.put(`/user/edit-any/${loggedInUser.user._id}`, form /*{ ...form, img: imgURL }*/);
 
       handleClose()
     } catch (error) {
@@ -61,7 +66,7 @@ function EditUser({handleClose, user}) {
             name="name"
             value={form.name}
             onChange={handleChange}
-            placeholder={user.name}
+            placeholder={form.name}
           />
         </Col>
       </Row>
@@ -73,7 +78,7 @@ function EditUser({handleClose, user}) {
             name="email"
             value={form.email}
             onChange={handleChange}
-            placeholder={user.email}
+            placeholder={form.email}
           />
         </Col>
       </Row>
@@ -85,7 +90,7 @@ function EditUser({handleClose, user}) {
             name="idNumber"
             value={form.idNumber}
             onChange={handleChange}
-            placeholder={user.idNumber}
+            placeholder={form.idNumber}
             />
         </Col>
         <Col>
@@ -95,7 +100,7 @@ function EditUser({handleClose, user}) {
             value={form.role}
             onChange={handleChange}
             >
-                <option value={user.role}>{user.role}</option>
+                <option value={form.role}>{form.role}</option>
                 <option value="USER">Usuário</option>
                 <option value="GESTOR">Gestor</option>
                 
