@@ -67,10 +67,6 @@ function Agenda({ resourceId, gestorId }) {
               </Form.Group>
             </Col>
             <Col>
-              <h2>Horários Disponíveis</h2>
-              {/** consultar a rota /booking/availability e passar resourceId e data */}
-              <p>id do resource: {resourceId}</p>
-              <p>data escolhida: {form.data}</p>
               {isDate && (
                 <Horarios form={form} setForm={setForm}/>
               )}
