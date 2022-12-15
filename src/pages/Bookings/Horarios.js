@@ -1,40 +1,42 @@
+
 import { useEffect, useState } from "react";
-import { Card, Button, Container, Form } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
 
-function Horarios({ form, setForm }) {
+ function Horarios({ form, setForm }) {
 
   const [freeHours, setFreeHours] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchFreeHours() {
-      try {
+   useEffect(() => {
+     async function fetchFreeHours() {
+       try {
 
 
-        const body = {
-          resource: form.resource,
-          schedule: form.data
-        }
+         const body = {
+           resource: form.resource,
+           schedule: form.data
+         }
 
-        const response = await api.post("/booking/availability", body);
+         const response = await api.post("/booking/availability", body);
 
-        setFreeHours(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchFreeHours();
-  }, []);
+         setFreeHours(response.data);
+         setIsLoading(false);
+       } catch (error) {
+         console.log(error);
+       }
+     }
+     fetchFreeHours();
+   }, []);
 
-  console.log(freeHours)
+   console.log(freeHours)
 
-  function handleChange(e) {
-    console.log("handle change do radio ", e);
-    setForm({ ...form, schedule: e.target.id});
-  }
+   function handleChange(e) {
+     console.log("handle change do radio ", e);
+     setForm({ ...form, schedule: e.target.id});
+   }
+
 
   return (
     <div>
@@ -42,11 +44,11 @@ function Horarios({ form, setForm }) {
       <Container className="border rounded mt-3">
         <h2>Horários disponíveis</h2>
         <Form>
-        <div key={`default-radio`} className="mb-3">
+        <div  className="mb-3">
         {!isLoading && freeHours
             .map((hour) => {
               return (
-                  <Form.Check 
+                  <Form.Check key={hour}
                     type="radio"
                     name="hour-radio"
                     id={`${form.data}-${hour}`}
@@ -59,9 +61,10 @@ function Horarios({ form, setForm }) {
         </Form>
       </Container>
 
-    </div> 
 
-  );
-}
+     </div> 
 
-export default Horarios;
+   );
+ }
+
+ export default Horarios;
