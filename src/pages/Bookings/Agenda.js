@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Modal, Button, Col, Form } from "react-bootstrap";
-import Horarios from "./Horarios"
+import Horarios from "./Horarios";
+import AuthContext from "../../contexts/authContext.js";
+import { api } from "../../api/api";
 
-function Agenda({ resourceId }) {
+function Agenda({ resourceId, gestorId }) {
   const [show, setShow] = useState(false);
+  
+  //const { loggedInUser } = useContext(AuthContext);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -12,14 +16,32 @@ function Agenda({ resourceId }) {
 
   const [form, setForm] = useState({
     data: "",
-    horario: ""
+    //user: loggedInUser.user._id,
+    user: "63971dc34b0b2046ebd1c891",
+    resource: resourceId,
+    schedule: "",
+    gestor: gestorId._id
   });
 
   function handleChange(e) {
-    setForm({[e.target.name]: e.target.value});
+    setForm({ ...form, [e.target.name]: e.target.value});
     setIsDate(true);
   }
-  console.log(form);
+  console.log("log do form", form);
+
+  async function handleSubmit(e){
+    e.preventDefault();
+
+    try {
+      await api.post("/booking/new", form);
+      handleClose();
+      alert("Agendamento realizado!");
+    } catch (error) {
+      alert("Algo deu errado!");
+      
+    }
+  }
+
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -49,7 +71,9 @@ function Agenda({ resourceId }) {
               {/** consultar a rota /booking/availability e passar resourceId e data */}
               <p>id do resource: {resourceId}</p>
               <p>data escolhida: {form.data}</p>
-              <Horarios resourceId={resourceId} data={form.data}/>
+              {isDate && (
+                <Horarios form={form} setForm={setForm}/>
+              )}
             </Col>
           </Form>
         </Modal.Body>
@@ -57,8 +81,8 @@ function Agenda({ resourceId }) {
           <Button variant="secondary" onClick={handleClose}>
             Cancelar
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Salvar
+          <Button variant="primary" onClick={handleSubmit}>
+            Agendar
           </Button>
         </Modal.Footer>
       </Modal>

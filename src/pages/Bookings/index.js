@@ -46,11 +46,7 @@ function BookingsPage() {
   //   }
   // }
 
-  //Montar data com horario
-
-  //Salvar booking
-
-  console.log(resources);
+  //console.log(resources);
 
   return (
     <div>
@@ -91,7 +87,7 @@ function BookingsPage() {
                     <h3>{resource.name}</h3>
                   </Card.Body>
                   <Card.Footer>
-                    <Agenda resourceId={resource._id} />
+                    <Agenda resourceId={resource._id} gestorId={resource.gestor}/>
                   </Card.Footer>
                 </Card>
               );
