@@ -5,12 +5,8 @@ import { api } from "../../api/api";
 function Horarios({ form, setForm }) {
 
   const [freeHours, setFreeHours] = useState();
-
-  //const [reload, setReload] = useState(false);
-
   const [isLoading, setIsLoading] = useState(true);
 
-  //console.log("params horarios: ", resourceId, data);
 
   useEffect(() => {
     async function fetchFreeHours() {
@@ -51,6 +47,7 @@ function Horarios({ form, setForm }) {
               return (
                   <Form.Check 
                     type="radio"
+                    name="hour-radio"
                     id={`${form.data}-${hour}`}
                     label={`${hour}`}
                     onChange={handleChange}
