@@ -13,16 +13,22 @@ export function Profile() {
   return (
     
     <>
-      <h1>Barra de navegação à esquerda e janela com info à direita</h1>
+
+  <div className="barraNav">
+    <h1>Barra de navegação à esquerda e janela com info à direita</h1>
+
+
+
+  </div>
 
         <Routes>
           <Route
             path="/meus-dados"
-            element={<UserInfo />/*<ProtectedRoute Component={UserInfo} />*/}
+            element={<ProtectedRoute Component={UserInfo} />}
           />
           <Route
             path="/todos"
-            element={<AllUsers />/*<ProtectedRoute Component={UserInfo} />*/}
+            element={<ProtectedRoute Component={AllUsers} />}
           />
           <Route
             path="/minhas-reservas"
@@ -30,7 +36,7 @@ export function Profile() {
           />
           <Route
             path="/meus-recursos"
-            element={<ProtectedGestorRoute Component={MyResources} />}
+            element={<ProtectedRoute Component={MyResources} />}
           />
          
         </Routes>

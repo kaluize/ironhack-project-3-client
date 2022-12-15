@@ -5,8 +5,8 @@
 
 // function Horarios({ form, setForm }) {
 
-//   const [freeHours, setFreeHours] = useState();
-
+  const [freeHours, setFreeHours] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
 //   useEffect(() => {
 //     async function fetchFreeHours() {
