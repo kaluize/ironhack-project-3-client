@@ -1,109 +1,130 @@
 import { useState } from "react";
-import axios from "axios";
-import {
-  Row,
-  Col,
-  Container,
-  Form,
-  Button,
-  ThemeProvider,
-} from "react-bootstrap";
+import { api } from "../../api/api";
+import { Row, Col, Container, Form, Button, ThemeProvider, FormLabel, FormControl } from "react-bootstrap";
 
-function NewGestor() {
-    
+
+function NewUser({handleClose}) {
+
   const [form, setForm] = useState({
     "name":"",
     "idNumber":"",
     "email":"",
-    "role":"",
+    "password":"",
+    "confirmPassword":"",
+    "role":"GESTOR",
     "resources":[],
     "booking":[],
   });
+
+  // const [img, setImg] = useState("");
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+  // function handleImage(e) {
+  //   setImg(e.target.files[0]);
+  // }
+
+  //async function handleUpload() {
+  //  try {
+  //    const uploadData = new FormData();
+  //    uploadData.append("picture", img);
+
+  //  const response = await api.post("/upload-image", uploadData);
+
+  //    return response.data.url;
+  //  } catch (error) {
+  //    console.log(error);
+  //  }
+  //}
+
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await axios.post("user/signup", form);
+    try {
+      //const imgURL = await handleUpload();
+      await api.post("/user/signup", form /*{ ...form, img: imgURL }*/);
 
-    setForm({
-        "name":"",
-        "idNumber":"",
-        "email":"",
-        "password":"",
-        "role":"",
-        "resources":[],
-        "booking":[],
-    });
+      handleClose()
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
     <ThemeProvider
-      breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
-      minBreakpoint="xxs"
-    >
-      <Container fluid="md">
-        <Form.Label>Nome</Form.Label>
-        <Form.Control
+    breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
+    minBreakpoint="xxs"
+  >
+    <Container fluid="md">
+      <Row>
+        <Col>
+          <Form.Label>Nome:</Form.Label>
+          <Form.Control
             type="text"
             name="name"
             value={form.name}
             onChange={handleChange}
-        />
-        <Form.Label>Matrícula</Form.Label>
-        <Form.Control
+          />
+        </Col>
+        <Col>
+          <Form.Label>Matrícula:</Form.Label>
+          <Form.Control
             type="text"
             name="idNumber"
             value={form.idNumber}
             onChange={handleChange}
-        />
-        <Form.Label>Tipo</Form.Label>
-        <Form.Select
-            name="role"
-            value={form.role}
-            onChange={handleChange}
-            >
-            <option>Ticker</option>
-            <option value="GESTOR">Gestor</option>
-            <option value="USER">Aluno</option>
-        </Form.Select>
-        <Form.Label>Endereço eletrônico</Form.Label>
-        <Form.Control
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Form.Label>e-mail:</Form.Label>
+          <Form.Control
             type="email"
             name="email"
             value={form.email}
             onChange={handleChange}
-        />
-        <Row>
-            <Col>
-                <Form.Label>Senha</Form.Label>
-                <Form.Control
-                    type="password"
-                    name="password"
-                    value={form.password}
-                    onChange={handleChange}
-                /> 
-            </Col>
-            <Col>
-                <Form.Label>Confirmar senha</Form.Label>
-                <Form.Control
-                    type="password"
-                    name="confirm"
-                /> 
-            </Col>
-        </Row>
-        <Button
-          as="input"
-          type="submit"
-          value="Novo usuário"
-          onClick={handleSubmit}
-        />
-      </Container>
-    </ThemeProvider>
-  );
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <FormLabel>Senha:</FormLabel>
+          <FormControl
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            />
+        </Col>
+        <Col>
+          <FormLabel>Confirmar Senha:</FormLabel>
+          <FormControl
+            type="password"
+            name="confirmPassword"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            />
+        </Col>            
+      </Row>
+      <Row>
+        <Col>
+          <FormLabel>Foto:</FormLabel>
+          <FormControl
+            type="file"
+          />
+        </Col>
+      </Row>
+      <Button
+        as="input"
+        type="submit"
+        value="Novo Gestor"
+        onClick={handleSubmit}
+      />
+    </Container>
+  </ThemeProvider>);
 }
 
-export default NewGestor;
+export default NewUser;
