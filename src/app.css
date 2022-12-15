@@ -139,7 +139,7 @@
 }
 
 .barra-lateral{
-  width: 23%;
+  width: 220px;
   height: 100vh;
   background-image: url(./images/background.png);
   background-size: cover;
