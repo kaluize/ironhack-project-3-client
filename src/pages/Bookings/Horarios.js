@@ -6,7 +6,7 @@ import { api } from "../../api/api";
 function Horarios({ form, setForm }) {
 
   const [freeHours, setFreeHours] = useState();
-
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchFreeHours() {
