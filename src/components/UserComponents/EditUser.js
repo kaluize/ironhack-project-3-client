@@ -4,15 +4,15 @@ import { Row, Col, Container, Form, Button, ThemeProvider, FormLabel, FormContro
 import { AuthContext } from "../../contexts/authContext.js";
 
 
-function EditUser({handleClose}) {
+function EditUser({handleClose, user}) {
 
   const { loggedInUser } = useContext(AuthContext);
 
   const [form, setForm] = useState({
-    "name":loggedInUser.user.name,
-    "idNumber":loggedInUser.user.idNumber,
-    "email":loggedInUser.user.email,
-    "role":loggedInUser.user.role,
+    "name":user.name,
+    "idNumber":user.idNumber,
+    "email":user.email,
+    "role":user.role
   });
 
   // const [img, setImg] = useState("");
@@ -43,7 +43,7 @@ function EditUser({handleClose}) {
 
     try {
       //const imgURL = await handleUpload();
-      await api.put(`/user/edit-any/${loggedInUser.user._id}`, form /*{ ...form, img: imgURL }*/);
+      await api.put(`/user/edit-any/${user._id}`, form /*{ ...form, img: imgURL }*/);
 
       handleClose()
     } catch (error) {
@@ -96,7 +96,6 @@ function EditUser({handleClose}) {
           <FormLabel>Tipo:</FormLabel>
           <Form.Select
             name="role"
-            value={form.role}
             onChange={handleChange}
             >
                 <option value={form.role}>{form.role}</option>
