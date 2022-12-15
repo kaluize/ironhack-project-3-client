@@ -1,16 +1,7 @@
 import "./index.css";  
-// import { Routes, Route } from "react-router-dom";
-// import Login from "./Pages/Login";
-
-// import axios from "axios";
-// import { useState, useEffect } from "react";
-// import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from "../contexts/authContext";
   
 export function Home() {
-  // const { loggedInUser } = useContext (AuthContext);
 
   return (
     <div className="hero-image">
