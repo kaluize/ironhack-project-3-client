@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Modal, Button, Col, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
-function CancelarBooking( { bookingId, agendamento, setReload }) {
+function AprovarBooking( { bookingId, reload, setReload, form, setForm, agendamento }) {
 
   const [show, setShow] = useState(false);
   
@@ -14,10 +14,10 @@ function CancelarBooking( { bookingId, agendamento, setReload }) {
     e.preventDefault();
 
     try {
-      await api.delete(`/booking/delete/${bookingId}`);
+      await api.put(`/booking/aprove/${bookingId}`, {...form, status: "Reservado"});
       handleClose();
-      setReload();
-      alert("Cancelamento de agendamento realizado!");
+      setReload(!reload);
+      alert("Agendamento autorizado com sucesso!");
     } catch (error) {
       alert("Algo deu errado!");
     }
@@ -26,16 +26,16 @@ function CancelarBooking( { bookingId, agendamento, setReload }) {
 
   return ( 
     <div>
-      <Button variant="danger" onClick={handleShow}>
-          Cancelar
+      <Button variant="success" onClick={handleShow}>
+          Aprovar agendamento
       </Button>
 
       <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-          <Modal.Title>Cancelar agendamento</Modal.Title>
+          <Modal.Title>Aprovar agendamento</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            Confirma o cancelamento deste agendamento?
+            Confirma o aprovar este agendamento?
             <i>{agendamento}</i>
           </Modal.Body>
           <Modal.Footer>
@@ -43,7 +43,7 @@ function CancelarBooking( { bookingId, agendamento, setReload }) {
               Voltar
             </Button>
             <Button variant="primary" onClick={handleSubmit}>
-              Confirmar cancelamento
+              Confirmar
             </Button>
           </Modal.Footer>
 
@@ -52,4 +52,4 @@ function CancelarBooking( { bookingId, agendamento, setReload }) {
   );
 }
 
-export default CancelarBooking;
+export default AprovarBooking;
