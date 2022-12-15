@@ -49,7 +49,7 @@ export function SignUp() {
       <input
         type="idNumber"
         name="idNumber"
-        value={form.name}
+        value={form.idNumber}
         onChange={handleChange}
       />
 
