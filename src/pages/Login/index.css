@@ -1,0 +1,93 @@
+/* .hero-image {
+    height: 100vh;
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+
+  }
+
+  .texto-home {
+    padding-top: 100px;
+    padding-left: 150px;
+    margin-left: 80px;
+    width: 50%;
+
+  }
+
+  .texto-home h1 {
+    font-size: 60px;
+    color: white;
+    font-weight: 700;
+
+  }
+
+  .login-section {
+    margin-top: 80px;
+    margin-left: 20px;
+    border-radius: 50px;
+    width: 350px;
+    height: 500px;
+    background-color: rgb(200, 200, 200, 0.7)
+  }
+
+  .login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+  }
+
+  .login-box h4{
+    margin-top: 50px;
+    margin-bottom:30px;
+
+
+  }
+
+  .blueButton{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 10px 30px;
+    background-color: rgb(24, 76, 90, 0.6);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    width: 200px;
+    align-self: center;
+
+    
+  }
+
+  .blueButton:hover{
+    background-color: rgba(26,188,156,0.7);
+    text-decoration: none;
+    font-weight: 300;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+
+  }
+
+  .form input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    min-width: 220px;
+    font-weight: 200;
+    font-size: 20px;
+  }
+
+  .form label {
+    font-weight: 200;
+    font-size: 20px;
+  } */

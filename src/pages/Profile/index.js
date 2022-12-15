@@ -1,29 +1,49 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../api/api";
+import MyBookings from "./MyBookings";
+import MyResources from "./MyResources";
+import { UserInfo } from "./UserInfo";
+import AllUsers from "./AllUsers"
+import { ProtectedRoute } from "../../components/ProtectedRoute";
+import { Routes, Route } from "react-router-dom";
+
+
 
 export function Profile() {
-  const [user, setUser] = useState({ name: "", email: "" });
-  const navigate = useNavigate();
-  useEffect(() => {
-    async function fetchUser() {
-      const response = await api.get("/user/profile");
-      setUser(response.data);
-    }
-
-    fetchUser();
-  }, []);
-
-  function handleLogOut() {
-    localStorage.removeItem("loggedInUser");
-    navigate("/");
-  }
-
+  
   return (
+    
     <>
-      <h1>{user.name}</h1>
-      <p>{user.email}</p>
-      <button onClick={handleLogOut}>Sair</button>
+
+  <div className="barraNav">
+    <h1>Barra de navegação à esquerda e janela com info à direita</h1>
+
+
+
+
+  </div>
+
+        <Routes>
+          <Route
+            path="/meus-dados"
+            element={<ProtectedRoute Component={UserInfo} />}
+          />
+          <Route
+            path="/todos"
+            element={<ProtectedRoute Component={AllUsers} />}
+          />
+          <Route
+            path="/minhas-reservas"
+            element={<ProtectedRoute Component={MyBookings} />}
+          />
+          <Route
+            path="/meus-recursos"
+            element={<ProtectedRoute Component={MyResources} />}
+          />
+         
+        </Routes>
+
+
     </>
+
+
   );
 }
