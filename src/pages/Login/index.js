@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
-import { AuthContext } from "../../contexts/authContext";
-import { api } from "../../api/api";
-import { useNavigate } from "react-router-dom";
-import ModalNewUser from "../../components/UserComponents/NewUserModal";
+// import { AuthContext } from "../../contexts/authContext";
+// import { api } from "../../api/api";
+// import { useNavigate } from "react-router-dom";
+// import ModalNewUser from "../../components/UserComponents/NewUserModal";
 
 export function Login() {
   const [form, setForm] = useState({
@@ -10,31 +10,31 @@ export function Login() {
     password: "",
   });
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const { setLoggedInUser } = useContext(AuthContext);
+  // const { setLoggedInUser } = useContext(AuthContext);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSumit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      const response = await api.post("/user/login", form);
-      setLoggedInUser({ ...response.data });
+      // const response = await api.post("/user/login", form);
+      // setLoggedInUser({ ...response.data });
 
-      localStorage.setItem("loggedInUser", JSON.stringify(response.data));
+      // localStorage.setItem("loggedInUser", JSON.stringify(response.data));
 
-      navigate("/profile");
+      // navigate("/profile");
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <form onSubmit={handleSumit}>
+    <form onSubmit={handleSubmit}>
       <label>Email:</label>
       <input
         type="email"
@@ -49,8 +49,8 @@ export function Login() {
         value={form.password}
         onChange={handleChange}
       />
-      <button type="submit">Entrar!</button>
-      <ModalNewUser />
+      <button type="submit">ENTRAR</button>
+      {/* <ModalNewUser />  */}
     </form>
   );
 }
