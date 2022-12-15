@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import NewUser from "./NewUser.js"
+import "../../app.css"
 
 function ModalNewUser() {
   const [show, setShow] = useState(false);
@@ -10,8 +11,8 @@ function ModalNewUser() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="button-modal">
-        Novo Usuário
+      <Button className="blueButton" variant="primary" onClick={handleShow}>
+        CADASTRE-SE
       </Button>
 
       <Modal show={show} onHide={handleClose}>
