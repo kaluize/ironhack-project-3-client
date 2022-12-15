@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../api/api";
 import MyBookings from "./MyBookings";
 import MyResources from "./MyResources";
 import { UserInfo } from "./UserInfo";
