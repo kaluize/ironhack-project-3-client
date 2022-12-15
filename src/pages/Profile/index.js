@@ -3,7 +3,6 @@ import MyResources from "./MyResources";
 import { UserInfo } from "./UserInfo";
 import AllUsers from "./AllUsers"
 import { ProtectedRoute } from "../../components/ProtectedRoute";
-import { ProtectedGestorRoute } from "../../components/ProtectedGestorRoute";
 import { Routes, Route } from "react-router-dom";
 
 
@@ -12,14 +11,15 @@ export function Profile() {
   
   return (
     
-    <>
+    <div className="profile-page">
 
-  <div className="barraNav">
-    <h1>Barra de navegação à esquerda e janela com info à direita</h1>
+      <div className="barraNav">
+        <h1>Barra de navegação à esquerda e janela com info à direita</h1>
 
 
 
-  </div>
+
+      </div>
 
         <Routes>
           <Route
@@ -42,7 +42,7 @@ export function Profile() {
         </Routes>
 
 
-    </>
+    </div>
 
 
   );

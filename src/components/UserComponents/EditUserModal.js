@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import EditUser from "./EditUser.js"
 
-function EditUserModal({user}) {
+function EditUserModal({loggedInUser, user}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

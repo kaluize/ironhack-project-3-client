@@ -1,14 +1,18 @@
-import { useState } from "react";
+import React, { useState, useContext } from 'react';
 import { api } from "../../api/api";
 import { Row, Col, Container, Form, Button, ThemeProvider, FormLabel, FormControl } from "react-bootstrap";
+import { AuthContext } from "../../contexts/authContext.js";
+
 
 function EditUser({handleClose, user}) {
+
+  const { loggedInUser } = useContext(AuthContext);
 
   const [form, setForm] = useState({
     "name":user.name,
     "idNumber":user.idNumber,
     "email":user.email,
-    "role":user.role,
+    "role":user.role
   });
 
   // const [img, setImg] = useState("");
@@ -61,7 +65,7 @@ function EditUser({handleClose, user}) {
             name="name"
             value={form.name}
             onChange={handleChange}
-            placeholder={user.name}
+            placeholder={form.name}
           />
         </Col>
       </Row>
@@ -73,7 +77,7 @@ function EditUser({handleClose, user}) {
             name="email"
             value={form.email}
             onChange={handleChange}
-            placeholder={user.email}
+            placeholder={form.email}
           />
         </Col>
       </Row>
@@ -85,17 +89,16 @@ function EditUser({handleClose, user}) {
             name="idNumber"
             value={form.idNumber}
             onChange={handleChange}
-            placeholder={user.idNumber}
+            placeholder={form.idNumber}
             />
         </Col>
         <Col>
           <FormLabel>Tipo:</FormLabel>
           <Form.Select
             name="role"
-            value={form.role}
             onChange={handleChange}
             >
-                <option value={user.role}>{user.role}</option>
+                <option value={form.role}>{form.role}</option>
                 <option value="USER">Usuário</option>
                 <option value="GESTOR">Gestor</option>
                 

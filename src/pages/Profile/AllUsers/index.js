@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect, useContext } from 'react';
+import { AuthContext } from "../../../contexts/authContext";
 import { api } from "../../../api/api";
 import { Card, Button, Container, Table } from "react-bootstrap";
 import EditUserModal from "../../../components/UserComponents/EditUserModal";
@@ -6,6 +7,8 @@ import EditUserModal from "../../../components/UserComponents/EditUserModal";
 function AllUsers() {
   const [users, setUsers] = useState([]);
   const [isloading, setIsloading] = useState(true);
+
+  const { loggedInUser } = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchUser() {
