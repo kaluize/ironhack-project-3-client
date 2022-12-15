@@ -3,6 +3,7 @@ import { Card, Container, Form } from "react-bootstrap";
 import { api } from "../../../api/api";
 import CancelarBooking from "../../Bookings/CancelarBooking";
 import EditarBooking from "../../Bookings/EditarBooking";
+import AprovarBooking from "../../Bookings/AprovarBooking";
 
 
 function MyBookings() {
@@ -57,7 +58,11 @@ function MyBookings() {
                       resourceId={booking.resource._id}
                       gestorId={booking.gestor}
                       setReload={setReload}
-                      />
+                    />
+                    {!(booking.status === "Pendente") && (
+                      <AprovarBooking bookingId={booking._id} setReload={setReload}/>
+                    )}
+                    
                   </Card.Footer>
                 </Card>
               );

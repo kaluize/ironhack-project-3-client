@@ -56,7 +56,8 @@ function EditarBooking( { bookingId, agendamento, resourceId, gestorId, setReloa
         <Modal.Title>Alterar agendamento</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Escolha nova data e horário
+          <i>{agendamento}</i><br />
+          Escolha nova data e horário:
           <Form>
           {/** Escolher a data a ser reservada */}
             <Col>
