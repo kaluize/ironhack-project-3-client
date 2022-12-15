@@ -4,7 +4,7 @@ import { api } from "../../api/api";
 import Horarios from "./Horarios";
 import { AuthContext } from "../../contexts/authContext.js";
 
-function EditarBooking( { bookingId, agendamento, resourceId, gestorId, setReload }) {
+function EditarBooking( { bookingId, agendamento, resourceId, gestorId, reload, setReload }) {
 
   const [show, setShow] = useState(false);
   
@@ -32,7 +32,7 @@ function EditarBooking( { bookingId, agendamento, resourceId, gestorId, setReloa
     try {
       await api.put(`/booking/edit/${bookingId}`, {...form});
       handleClose();
-      setReload();
+      setReload(!reload);
       alert("Agendamento alterado com sucesso!");
     } catch (error) {
       alert("Algo deu errado!");

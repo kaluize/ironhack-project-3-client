@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
-import { Card, Container, Form } from "react-bootstrap";
+import { useEffect, useState, useContext } from "react";
+import { Card, Container, Form, Col, Row } from "react-bootstrap";
 import { api } from "../../../api/api";
 import CancelarBooking from "../../Bookings/CancelarBooking";
 import EditarBooking from "../../Bookings/EditarBooking";
 import AprovarBooking from "../../Bookings/AprovarBooking";
+import { AuthContext } from "../../../contexts/authContext.js";
+
 
 
 function MyBookings() {
@@ -13,7 +15,9 @@ function MyBookings() {
   const [reload, setReload] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { loggedInUser } = useContext(AuthContext);
   
+
   useEffect(() => {
     async function fetchMyBookings() {
       try {
@@ -47,22 +51,34 @@ function MyBookings() {
                     <p><i>Status: {booking.status}</i></p>
                   </Card.Body>
                   <Card.Footer>
-                    <CancelarBooking 
-                      bookingId={booking._id} 
-                      agendamento={`${booking.resource.name} em ${booking.schedule}`}
-                      setReload={setReload}
+                    <Row>
+                      <Col>
+                        <CancelarBooking 
+                        bookingId={booking._id} 
+                        agendamento={`${booking.resource.name} em ${booking.schedule}`}
+                        setReload={setReload}
+                        />
+                      </Col>
+                      <Col>
+                        <EditarBooking 
+                        bookingId={booking._id}
+                        agendamento={`${booking.resource.name} em ${booking.schedule}`}
+                        resourceId={booking.resource._id}
+                        gestorId={booking.gestor}
+                        setReload={setReload}
+                        reload={reload}
                       />
-                    <EditarBooking 
-                      bookingId={booking._id}
-                      agendamento={`${booking.resource.name} em ${booking.schedule}`}
-                      resourceId={booking.resource._id}
-                      gestorId={booking.gestor}
-                      setReload={setReload}
-                    />
-                    {!(booking.status === "Pendente") && (
-                      <AprovarBooking bookingId={booking._id} setReload={setReload}/>
-                    )}
-                    
+                      </Col>
+                      <Col>
+                        {(booking.status === "Pendente") &&
+                          (loggedInUser.user.role === "GESTOR") && 
+                          ( <AprovarBooking 
+                            bookingId={booking._id} 
+                            setReload={setReload} 
+                            reload={reload}/>
+                        )}
+                      </Col>
+                    </Row>
                   </Card.Footer>
                 </Card>
               );

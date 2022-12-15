@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Col, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
-function AprovarBooking( { bookingId, setReload, form, setForm, agendamento }) {
+function AprovarBooking( { bookingId, reload, setReload, form, setForm, agendamento }) {
 
   const [show, setShow] = useState(false);
   
@@ -16,7 +16,7 @@ function AprovarBooking( { bookingId, setReload, form, setForm, agendamento }) {
     try {
       await api.put(`/booking/aprove/${bookingId}`, {...form, status: "Reservado"});
       handleClose();
-      setReload();
+      setReload(!reload);
       alert("Agendamento autorizado com sucesso!");
     } catch (error) {
       alert("Algo deu errado!");
@@ -26,7 +26,7 @@ function AprovarBooking( { bookingId, setReload, form, setForm, agendamento }) {
 
   return ( 
     <div>
-      <Button variant="sucess" onClick={handleShow}>
+      <Button variant="success" onClick={handleShow}>
           Aprovar agendamento
       </Button>
 
