@@ -2,17 +2,13 @@ import { useState } from "react";
 import { api } from "../../api/api";
 import { Row, Col, Container, Form, Button, ThemeProvider, FormLabel, FormControl } from "react-bootstrap";
 
-function NewUser({handleClose}) {
+function EditUser({handleClose, user}) {
 
   const [form, setForm] = useState({
-    "name":"",
-    "idNumber":"",
-    "email":"",
-    "password":"",
-    "confirmPassword":"",
-    "role":"USER",
-    "resources":[],
-    "booking":[],
+    "name":user.name,
+    "idNumber":user.idNumber,
+    "email":user.email,
+    "role":user.role,
   });
 
   // const [img, setImg] = useState("");
@@ -65,15 +61,7 @@ function NewUser({handleClose}) {
             name="name"
             value={form.name}
             onChange={handleChange}
-          />
-        </Col>
-        <Col>
-          <Form.Label>Matrícula:</Form.Label>
-          <Form.Control
-            type="text"
-            name="idNumber"
-            value={form.idNumber}
-            onChange={handleChange}
+            placeholder={user.name}
           />
         </Col>
       </Row>
@@ -85,28 +73,34 @@ function NewUser({handleClose}) {
             name="email"
             value={form.email}
             onChange={handleChange}
+            placeholder={user.email}
           />
         </Col>
       </Row>
       <Row>
         <Col>
-          <FormLabel>Senha:</FormLabel>
+          <FormLabel>Matrícula:</FormLabel>
           <FormControl
-            type="password"
-            name="password"
-            value={form.password}
+            type="text"
+            name="idNumber"
+            value={form.idNumber}
             onChange={handleChange}
+            placeholder={user.idNumber}
             />
         </Col>
         <Col>
-          <FormLabel>Confirmar Senha:</FormLabel>
-          <FormControl
-            type="password"
-            name="confirmPassword"
-            value={form.confirmPassword}
+          <FormLabel>Tipo:</FormLabel>
+          <Form.Select
+            name="idNumber"
+            value={form.idNumber}
             onChange={handleChange}
-            />
-        </Col>            
+            >
+                <option value={user.role}>{user.role}</option>
+                <option value="USER">Usuário</option>
+                <option value="GESTOR">Gestor</option>
+                
+            </Form.Select>
+        </Col>              
       </Row>
       <Row>
         <Col>
@@ -126,4 +120,4 @@ function NewUser({handleClose}) {
   </ThemeProvider>);
 }
 
-export default NewUser;
+export default EditUser;
