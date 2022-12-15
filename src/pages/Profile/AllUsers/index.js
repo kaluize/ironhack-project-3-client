@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { api } from "../../../api/api";
 import { Card, Button, Container, Table } from "react-bootstrap";
 import EditUserModal from "../../../components/UserComponents/EditUserModal";
 
@@ -9,7 +10,7 @@ function AllUsers() {
 
   useEffect(() => {
     async function fetchUser() {
-      const response = await axios.get("/user/all-users");
+      const response = await api.get("/user/all-users");
       setUsers(response.data);
       setIsloading(false)
     }
@@ -18,7 +19,9 @@ function AllUsers() {
   }, []);
 
   async function handleDelete(userID) {
-    await axios.put(`/delete/${userID}`)
+    await api.delete(`user/delete/${userID}`)
+    setIsloading(false)
+    window.location.reload()
   }
 
 
