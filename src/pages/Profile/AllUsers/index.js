@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { api } from "../../../api/api";
 import { Card, Button, Container, Table } from "react-bootstrap";
 import EditUserModal from "../../../components/UserComponents/EditUserModal";
