@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Button, Container, Form } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
 
@@ -42,11 +42,11 @@ function Horarios({ form, setForm }) {
       <Container className="border rounded mt-3">
         <h2>Horários disponíveis</h2>
         <Form>
-        <div key={`default-radio`} className="mb-3">
+        <div  className="mb-3">
         {!isLoading && freeHours
             .map((hour) => {
               return (
-                  <Form.Check 
+                  <Form.Check key={hour}
                     type="radio"
                     name="hour-radio"
                     id={`${form.data}-${hour}`}

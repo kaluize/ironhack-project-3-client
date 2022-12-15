@@ -22,7 +22,7 @@ export function Profile() {
           />
           <Route
             path="/todos"
-            element={<ProtectedGestorRoute Component={AllUsers} />}
+            element={<ProtectedRoute Component={AllUsers} />}
           />
           <Route
             path="/minhas-reservas"

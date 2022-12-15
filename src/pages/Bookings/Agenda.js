@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { Modal, Button, Col, Form } from "react-bootstrap";
 import Horarios from "./Horarios";
-import AuthContext from "../../contexts/authContext.js";
+import { AuthContext } from "../../contexts/authContext.js";
 import { api } from "../../api/api";
 
 function Agenda({ resourceId, gestorId }) {
   const [show, setShow] = useState(false);
   
-  //const { loggedInUser } = useContext(AuthContext);
+  const { loggedInUser } = useContext(AuthContext);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -16,8 +16,8 @@ function Agenda({ resourceId, gestorId }) {
 
   const [form, setForm] = useState({
     data: "",
-    //user: loggedInUser.user._id,
-    user: "63971dc34b0b2046ebd1c891",
+    user: loggedInUser.user._id,
+    //user: "639a31b0b592415aa66c2603",
     resource: resourceId,
     schedule: "",
     gestor: gestorId._id
