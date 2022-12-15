@@ -6,7 +6,6 @@ import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile/index.js";
 import { ErrorPage } from "./pages/ErrorPage/index.js";
 import BookingsPage from "./pages/Bookings/index.js";
-import ConfigurationsPage from "./pages/Configurations/index.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { ProtectedRoute } from "./components/ProtectedRoute/index.js";
@@ -20,12 +19,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/profile"
+          <Route path="/profile/*"
             // element={<ProtectedRoute Component={Profile} />}
             element={<Profile />}/>
           <Route path="/reservas" element={<BookingsPage />} />
-          <Route path="/config"
-            element={<ProtectedGestorRoute Component={ConfigurationsPage} />}/>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>

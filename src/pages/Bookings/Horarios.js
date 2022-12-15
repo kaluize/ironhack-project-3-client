@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
-import { useParams, Routes, Route, Link } from "react-router-dom";
 import { Card, Button, Container, Form } from "react-bootstrap";
 import { api } from "../../api/api";
 
-function Horarios({ resourceId, data }) {
 
-  const [freeHours, setFreeHours] = useState([]);
+function Horarios({ form, setForm }) {
 
-  const [reload, setReload] = useState(false);
+  const [freeHours, setFreeHours] = useState();
 
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchFreeHours() {
       try {
-        const response = await api.
-          get("/booking/availability", 
-            {resource:resourceId},
-            {schedule: data});
+
+
+        const body = {
+          resource: form.resource,
+          schedule: form.data
+        }
+
+        const response = await api.post("/booking/availability", body);
+
         setFreeHours(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -25,33 +27,40 @@ function Horarios({ resourceId, data }) {
       }
     }
     fetchFreeHours();
-  }, [reload]);
+  }, []);
 
-  return ( 
-    
+  console.log(freeHours)
+
+  function handleChange(e) {
+    console.log("handle change do radio ", e);
+    setForm({ ...form, schedule: e.target.id});
+  }
+
+  return (
     <div>
       {/*Escolher o horario*/}
-      {/* <Container className="border rounded mt-3">
+      <Container className="border rounded mt-3">
         <h2>Horários disponíveis</h2>
         <Form>
-       
-        {!isLoading &&
-          freeHours
+        <div key={`default-radio`} className="mb-3">
+        {!isLoading && freeHours
             .map((hour) => {
               return (
-                <div key={`default-${type}`} className="mb-3">
                   <Form.Check 
-                    type={type}
-                    id={`default-${type}`}
-                    label={`default ${type}`}
+                    type="radio"
+                    name="hour-radio"
+                    id={`${form.data}-${hour}`}
+                    label={`${hour}`}
+                    onChange={handleChange}
                   />
-                </div>
               );
-            })}       
+            })} 
+          </div>      
         </Form>
       </Container>
-      */}
+
     </div> 
+
   );
 }
 
