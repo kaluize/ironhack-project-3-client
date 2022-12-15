@@ -18,7 +18,7 @@ export function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSumit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     try {
@@ -34,7 +34,7 @@ export function Login() {
   }
 
   return (
-    <form onSubmit={handleSumit}>
+    <form onSubmit={handleSubmit}>
       <label>Email:</label>
       <input
         type="email"
@@ -49,8 +49,8 @@ export function Login() {
         value={form.password}
         onChange={handleChange}
       />
-      <button type="submit">Entrar!</button>
-      <ModalNewUser />
+      <button type="submit">ENTRAR</button>
+      <ModalNewUser /> 
     </form>
   );
 }
