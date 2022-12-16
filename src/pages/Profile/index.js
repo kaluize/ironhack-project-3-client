@@ -39,7 +39,7 @@ export function Profile() {
             (<>
               <p><Link className="link-barra-lateral" to="meus-recursos" >Recursos</Link></p>
               <p><Link className="link-barra-lateral" to="todos" >Usuários</Link></p>
-              <ModalNewGestor />
+              <ModalNewGestor className="link-barra-lateral"/>
             </>)}
               <p><Link className="link-barra-lateral" to="/" onClick={handleLogOut}>Sair</Link></p>
         </div>
