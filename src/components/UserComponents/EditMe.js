@@ -89,7 +89,7 @@ function EditUser({handleClose, user}) {
             />
         </Col>       
       </Row>
-      <Button
+      <Button className="modalConfirmButton"
         as="input"
         type="submit"
         value="Editar"
