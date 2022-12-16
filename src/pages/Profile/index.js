@@ -3,12 +3,14 @@ import MyResources from "./MyResources";
 import { UserInfo } from "./UserInfo";
 import AllUsers from "./AllUsers";
 import { ProtectedRoute } from "../../components/ProtectedRoute";
+
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import "../../app.css";
 
 export function Profile() {
+
   return (
     <div className="profile-page">
 

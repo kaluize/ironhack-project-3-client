@@ -6,8 +6,6 @@ import EditarBooking from "../../Bookings/EditarBooking";
 import AprovarBooking from "../../Bookings/AprovarBooking";
 import { AuthContext } from "../../../contexts/authContext.js";
 
-
-
 function MyBookings() {
   //listar os recursos reservados por mim
   //const [search, setSearch] = useState("");
