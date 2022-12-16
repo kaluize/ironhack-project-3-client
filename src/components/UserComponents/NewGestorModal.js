@@ -11,7 +11,7 @@ function ModalNewGestor() {
   return (
     <>
       <Button variant="primary" onClick={handleShow} className="button-modal">
-        Novo Usuário
+        Novo Gestor
       </Button>
 
       <Modal show={show} onHide={handleClose}>
