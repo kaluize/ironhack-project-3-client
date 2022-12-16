@@ -27,45 +27,20 @@ export function Profile() {
     <div className="profile-page">
       <div className="barra-lateral">
         <div className="avatar">
-          <h1>{loggedInUser.user.name}</h1>
-          <h3>{loggedInUser.user.role.toLowerCase()}</h3>
+        <h1>{loggedInUser.user.name}</h1>
+        <h3>{loggedInUser.user.role}</h3>
         </div>
         <div>
-          <p>
-            <Link className="link-barra-lateral" to="meus-dados">
-              Meus dados
-            </Link>
-          </p>
-          <p>
-            <Link className="link-barra-lateral" to="minhas-reservas">
-              Minhas reservas
-            </Link>
-          </p>
-          <p>
-            <Link className="link-barra-lateral" to="fazer-reserva">
-              Nova Reserva
-            </Link>
-          </p>
-          {loggedInUser.user.role === "GESTOR" && (
-            <>
-              <p>
-                <Link className="link-barra-lateral" to="meus-recursos">
-                  Recursos
-                </Link>
-              </p>
-              <p>
-                <Link className="link-barra-lateral" to="todos">
-                  Usuários
-                </Link>
-              </p>
-              <ModalNewGestor />
-            </>
-          )}
-          <p>
-            <Link className="link-barra-lateral-red" to="/" onClick={handleLogOut}>
-              Sair
-            </Link>
-          </p>
+            <p><Link className="link-barra-lateral" to="meus-dados" >Meus dados</Link></p>
+            <p><Link className="link-barra-lateral" to="minhas-reservas" >Minhas reservas</Link></p>
+            <p><Link className="link-barra-lateral" to="fazer-reserva" >Nova Reserva</Link></p>
+            {loggedInUser.user.role === "GESTOR" &&
+            (<>
+              <p><Link className="link-barra-lateral" to="meus-recursos" >Recursos</Link></p>
+              <p><Link className="link-barra-lateral" to="todos" >Usuários</Link></p>
+              <div className="modal-barra-lateral"><ModalNewGestor /></div>
+            </>)}
+              <p><Link className="link-barra-lateral" to="/" onClick={handleLogOut}>Sair</Link></p>
         </div>
       </div>
 

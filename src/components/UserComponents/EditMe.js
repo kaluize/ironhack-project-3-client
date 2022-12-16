@@ -41,6 +41,7 @@ function EditUser({handleClose, user}) {
       await api.put(`/user/edit-any/${user._id}`, form /*{ ...form, img: imgURL }*/);
 
       handleClose()
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
