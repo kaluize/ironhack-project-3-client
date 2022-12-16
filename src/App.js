@@ -7,7 +7,7 @@ import { Profile } from "./pages/Profile/index.js";
 import { ErrorPage } from "./pages/ErrorPage/index.js";
 import BookingsPage from "./pages/Bookings/index.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Resources } from "./pages/Resources/index.js";
 import { ProtectedRoute } from "./components/ProtectedRoute/index.js";
 import { ProtectedGestorRoute } from "./components/ProtectedGestorRoute/index.js";
 
@@ -21,6 +21,7 @@ function App() {
             // element={<ProtectedRoute Component={Profile} />}
             element={<Profile />}/>
           <Route path="/reservas" element={<BookingsPage />} />
+          <Route path="/recursos" element={<Resources />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>
