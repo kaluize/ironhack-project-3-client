@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { Row, Col, Container, Form, Button, ThemeProvider, FormLabel, FormControl } from "react-bootstrap";
+import "../../app.css"
 
 function NewUser({handleClose}) {
 
@@ -108,10 +109,10 @@ function NewUser({handleClose}) {
             />
         </Col>            
       </Row>
-      <Button
+      <Button className="blueButton"
         as="input"
         type="submit"
-        value="Novo Usuário"
+        value="Cadastrar"
         onClick={handleSubmit}
       />
     </Container>

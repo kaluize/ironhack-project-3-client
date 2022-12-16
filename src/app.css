@@ -1,23 +1,178 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300);
 
-  .blueButton{
-    margin-bottom: 30px;
-    margin-top: 10px;
-    background-color: rgb(24, 76, 90, 0.6);
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-size: 18px;
-    font-weight: 200;
-    width: 200px;
-    align-self: center;
-    padding: 5px;
-    
-  }
+.errorPage {
+  background-color: #335b67;
+  background: radial-gradient(ellipse at center, #335b67 0%, #2c3e50 100%) fixed
+    no-repeat;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: white;
+  margin: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+}
 
-  .blueButton:hover{
-    background-color: rgba(26,188,156,0.7);
-    text-decoration: none;
-    font-weight: 300;
-  }
+.johnTravolta {
+  background-image: johnTravolta;
+}
+
+.texto {
+  float: right;
+  max-width: 45%;
+  font-weight: 300;
+  font-size: 18px;
+  padding-bottom: 40px;
+  line-height: 28px;
+}
+
+.texto h1 {
+  margin: 0px;
+  font-weight: 400;
+  font-size: 42px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  line-height: normal;
+}
+
+.navigation {
+  display: block;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  height: 41px;
+  line-height: 41px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  margin-top: 30px;
+  border-bottom: none;
+}
+
+.navigation:hover {
+  background-color: rgba(26, 188, 156, 0.7);
+  border-bottom: none;
+  color: white;
+}
+
+.blueButton {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: rgb(23, 81, 255);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  width: 200px;
+  align-self: center;
+  padding: 5px;
+}
+
+.blueButton:hover {
+  background-color: rgb(19, 70, 218);
+  text-decoration: none;
+  font-weight: 200;
+}
+
+.redButton {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: rgb(166, 57, 59, 0.6);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+  width: 200px;
+  align-self: center;
+  padding: 5px;
+}
+
+.redButton:hover {
+  background-color: rgb(255, 120, 120, 0.7);
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.navBar {
+  background-color: #232935;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  font-size: 32px;
+}
+
+.navBar div {
+  padding-left: 130px;
+  display: flex;
+  align-items: center;
+}
+
+.link-navbar {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 200;
+  margin: 50px;
+}
+
+.link-navbar:hover{
+  font-size:large;
+  color: white;
+  font-weight: 300;
+}
+
+.profile-page{
+  display: flex;
+}
+
+.barra-lateral{
+  width: 220px;
+  height: 100vh;
+  background-image: url(./images/background.png);
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.link-barra-lateral {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+  margin-left: 35px;
+}
+
+.link-barra-lateral:hover{
+  font-size:large;
+  color: #003366;
+  font-weight: 500;
+}
+
+
 
 

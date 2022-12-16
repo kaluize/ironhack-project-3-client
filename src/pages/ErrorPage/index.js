@@ -1,5 +1,5 @@
-import "./index.css";
-import johnTravolta from "./images/confused-john-travolta.gif";
+import "../../app.css";
+import johnTravolta from "../../images/confused-john-travolta.gif";
 
 
 export function ErrorPage() {
