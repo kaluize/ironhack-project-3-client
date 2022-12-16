@@ -29,19 +29,19 @@ export function Profile() {
       <div className="barra-lateral">
         <div className="avatar">
         <h1>{loggedInUser.user.name}</h1>
-        <h3>{loggedInUser.user.role}</h3>
+        <h3>{loggedInUser.user.role.toLowerCase()}</h3>
         </div>
         <div>
             <p><Link className="link-barra-lateral" to="meus-dados" >Meus dados</Link></p>
             <p><Link className="link-barra-lateral" to="minhas-reservas" >Minhas reservas</Link></p>
-            <p><Link className="link-barra-lateral" to="fazer-reserva" >Fazer Reserva</Link></p>
+            <p><Link className="link-barra-lateral" to="fazer-reserva" >Nova Reserva</Link></p>
             {loggedInUser.user.role === "GESTOR" &&
             (<>
-              <p><Link className="link-barra-lateral" to="meus-recursos" >Ver recursos</Link></p>
-              <p><Link className="link-barra-lateral" to="todos" >Ver usuários</Link></p>
+              <p><Link className="link-barra-lateral" to="meus-recursos" >Recursos</Link></p>
+              <p><Link className="link-barra-lateral" to="todos" >Usuários</Link></p>
               <ModalNewGestor />
             </>)}
-            <button onClick={handleLogOut}>Sair</button>
+              <p><Link className="link-barra-lateral" to="/" onClick={handleLogOut}>Sair</Link></p>
         </div>
       </div>
 

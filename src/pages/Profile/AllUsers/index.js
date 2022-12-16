@@ -32,7 +32,6 @@ function AllUsers() {
     
     <>
         <Container className="containerDetail">
-            <p>Usuários</p>
             <Card className="cardUsers">
                 <Card.Header className="cardUsersHeader">
                     <Card.Title className="cardUsersTitle">Usuários</Card.Title>
@@ -59,7 +58,7 @@ function AllUsers() {
                                 <td>{user.role}</td>
                                 <td>{user.email}</td>
                                 <td><EditUserModal user={user}/></td>
-                                <td><Button variant="danger" onClick={() => {
+                                <td><Button className="modalGrayButton" onClick={() => {
                                     handleDelete(user._id)}}>Excluir</Button>
                                 </td>                                
                             </tr>

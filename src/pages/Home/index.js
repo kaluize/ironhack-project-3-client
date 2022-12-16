@@ -4,6 +4,7 @@ import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import ModalNewUser from "../../components/UserComponents/NewUserModal";
 import Navbar from "../../components/Navbar.js";
+
 import "./index.css";
 import "../../app.css";
 
@@ -69,7 +70,7 @@ export function Home() {
               />
               <br></br>
               <button className="blueButton" type="submit">
-                ENTRAR
+                Entrar
               </button>
             </form>
 
@@ -79,6 +80,7 @@ export function Home() {
           </div>
         </div>
       </div>
+      <footer />
     </div>
   );
 }
