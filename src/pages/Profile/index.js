@@ -3,6 +3,10 @@ import MyResources from "./MyResources";
 import { UserInfo } from "./UserInfo";
 import AllUsers from "./AllUsers";
 import { ProtectedRoute } from "../../components/ProtectedRoute";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/authContext";
+import ModalNewGestor from "../../components/UserComponents/NewGestorModal";
 
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -10,19 +14,32 @@ import { Link } from "react-router-dom";
 import "../../app.css";
 
 export function Profile() {
+  const { loggedInUser } = useContext(AuthContext);
+  const navigate = useNavigate()
+
+  function handleLogOut() {
+    localStorage.removeItem("loggedInUser");
+    navigate("/");
+  }
 
   return (
     <div className="profile-page">
 
       <div className="barra-lateral">
         <div className="avatar">
-        <h1>Fulano</h1>
+        <h1>{loggedInUser.user.name}</h1>
+        <h3>{loggedInUser.user.role}</h3>
         </div>
         <div>
-            <p><Link className="link-barra-lateral" to="/" >Meus dados</Link></p>
-            <p><Link className="link-barra-lateral" to="/recursos" >Meus recursos</Link></p>
-            <p><Link className="link-barra-lateral" to="/reservas" >Minhas reservas</Link></p>
-            <p><Link className="link-barra-lateral" to="/">Sair</Link></p>
+            <p><Link className="link-barra-lateral" to="meus-dados" >Meus dados</Link></p>
+            <p><Link className="link-barra-lateral" to="minhas-reservas" >Minhas reservas</Link></p>
+            {loggedInUser.user.role === "GESTOR" &&
+            (<>
+              <p><Link className="link-barra-lateral" to="meus-recursos" >Ver recursos</Link></p>
+              <p><Link className="link-barra-lateral" to="todos" >Ver usuários</Link></p>
+              <ModalNewGestor />
+            </>)}
+            <button onClick={handleLogOut}>Sair</button>
         </div>
       </div>
 
