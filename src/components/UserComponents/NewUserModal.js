@@ -11,8 +11,8 @@ function ModalNewUser() {
 
   return (
     <>
-      <Button className="blueButton" variant="primary" onClick={handleShow}>
-        CADASTRE-SE
+      <Button variant="primary" className="blueButton" onClick={handleShow}>
+        Cadastre-se
       </Button>
 
       <Modal show={show} onHide={handleClose}>

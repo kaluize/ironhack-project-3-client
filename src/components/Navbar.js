@@ -5,7 +5,7 @@ import "../app.css";
 function NavBar() {
   return (
     <Navbar className="navBar">
-      <div>
+        <div>
         <Link className="link-navbar" to="/">
           Home
         </Link>
@@ -18,7 +18,7 @@ function NavBar() {
         <Link className="link-navbar" to="/">
           Sair
         </Link>
-      </div>
+        </div>
     </Navbar>
   );
 }
