@@ -3,7 +3,8 @@ import MyResources from "./MyResources";
 import { UserInfo } from "./UserInfo";
 import AllUsers from "./AllUsers";
 import { ProtectedRoute } from "../../components/ProtectedRoute";
-import { useContext, useNavigate } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import ModalNewGestor from "../../components/UserComponents/NewGestorModal";
 
