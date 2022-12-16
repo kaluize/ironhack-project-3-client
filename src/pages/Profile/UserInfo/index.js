@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import EditMeModal from "../../../components/UserComponents/EditUserModal";
+import EditMeModal from "../../../components/UserComponents/EditMeModal";
 import { api } from "../../../api/api";
 
 export function UserInfo() {
