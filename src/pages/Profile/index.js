@@ -60,6 +60,10 @@ export function Profile() {
           path="/meus-recursos"
           element={<ProtectedRoute Component={MyResources} />}
         />
+        <Route
+          path="/fazer-reserva"
+          element={<ProtectedRoute Component={MyBookings} />}
+        />
       </Routes>
     </div>
   );
