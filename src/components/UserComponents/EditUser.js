@@ -107,7 +107,7 @@ function EditUser({handleClose, user}) {
             </Form.Select>
         </Col>              
       </Row>
-      <Button
+      <Button className="modalConfirmButton"
         as="input"
         type="submit"
         value="Editar"

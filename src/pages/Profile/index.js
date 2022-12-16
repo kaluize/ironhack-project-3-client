@@ -16,7 +16,7 @@ import "../../app.css";
 
 export function Profile() {
   const { loggedInUser } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleLogOut() {
     localStorage.removeItem("loggedInUser");
@@ -25,7 +25,6 @@ export function Profile() {
 
   return (
     <div className="profile-page">
-
       <div className="barra-lateral">
         <div className="avatar">
         <h1>{loggedInUser.user.name}</h1>

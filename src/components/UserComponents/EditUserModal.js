@@ -25,7 +25,7 @@ function EditUserModal({loggedInUser, user}) {
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose} className="modalGrayButton">
             Sair
           </Button>
         </Modal.Footer>
