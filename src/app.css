@@ -184,6 +184,20 @@
   font-weight: 500;
 }
 
+.link-barra-lateral-red {
+  text-decoration: none;
+  color: rgb(216, 9, 54);
+  font-size: 18px;
+  font-weight: 300;
+  margin-left: 60px;
+}
+
+.link-barra-lateral-red:hover {
+  font-size: large;
+  color: #003366;
+  font-weight: 500;
+}
+
 .modal-title {
   color: #232935;
   text-shadow: 2px 2px 3px gray;
@@ -195,6 +209,7 @@
 
 .modalGrayButton {
   margin-bottom: 30px !important;
+  /* margin-top: 10px !important; */
   background-color: rgb(200, 200, 200) !important;
   border: none !important;
   border-radius: 20px !important;
@@ -230,7 +245,7 @@
 
 .modalConfirmButton {
   margin-bottom: 10px !important;
-  margin-top: 30px !important;
+  margin-top: 35px !important;
   align-items: right !important;
   background-color: rgb(12, 83, 109) !important;
   border: none !important;
@@ -306,4 +321,29 @@
   margin-bottom:10px;
 
 }
+
+.modalGrayButtonUsuario {
+  margin-bottom: 30px !important;
+  margin-top: 10px !important;
+  background-color: rgb(200, 200, 200) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  color: black !important;
+  font-size: 16px !important;
+  letter-spacing: 1px !important;
+  width: 180px !important;
+  padding: 8px !important;
+  box-shadow: 5px 5px 5px rgb(43, 45, 48) !important;
+  font-family: "Source Sans Pro", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  margin-right: 30px !important;
+  align-self: center !important;
+}
+
+.modalGrayButtonUsuario:hover {
+  text-decoration: none !important;
+  background-color: gray !important;
+  font-size: 18px !important;
+}
+
 

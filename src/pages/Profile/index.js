@@ -62,7 +62,7 @@ export function Profile() {
             </>
           )}
           <p>
-            <Link className="link-barra-lateral" to="/" onClick={handleLogOut}>
+            <Link className="link-barra-lateral-red" to="/" onClick={handleLogOut}>
               Sair
             </Link>
           </p>

@@ -58,7 +58,7 @@ function AllUsers() {
                                 <td>{user.role}</td>
                                 <td>{user.email}</td>
                                 <td><EditUserModal user={user}/></td>
-                                <td><Button className="modalGrayButton" onClick={() => {
+                                <td><Button className="modalGrayButtonUsuario" onClick={() => {
                                     handleDelete(user._id)}}>Excluir</Button>
                                 </td>                                
                             </tr>
