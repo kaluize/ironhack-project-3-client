@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import ModalNewGestor from "../../components/UserComponents/NewGestorModal";
+import BookingsPage from "../Bookings";
 
 import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -33,6 +34,7 @@ export function Profile() {
         <div>
             <p><Link className="link-barra-lateral" to="meus-dados" >Meus dados</Link></p>
             <p><Link className="link-barra-lateral" to="minhas-reservas" >Minhas reservas</Link></p>
+            <p><Link className="link-barra-lateral" to="fazer-reserva" >Fazer Reserva</Link></p>
             {loggedInUser.user.role === "GESTOR" &&
             (<>
               <p><Link className="link-barra-lateral" to="meus-recursos" >Ver recursos</Link></p>
@@ -62,7 +64,7 @@ export function Profile() {
         />
         <Route
           path="/fazer-reserva"
-          element={<ProtectedRoute Component={MyBookings} />}
+          element={<ProtectedRoute Component={BookingsPage} />}
         />
       </Routes>
     </div>
