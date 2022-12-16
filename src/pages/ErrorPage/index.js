@@ -4,13 +4,13 @@ import johnTravolta from "../../images/confused-john-travolta.gif";
 
 export function ErrorPage() {
     return (
-      <div class="errorPage">
+      <div className="errorPage">
 
         <div>
         <img src={johnTravolta} alt="john"/>
          </div>
 
-        <div class="texto">
+        <div className="texto">
           <h1>Oops!</h1> 
           <h1>Página não encontrada.</h1>
           <br></br>

@@ -2,18 +2,18 @@
 
 .errorPage {
   background-color: #335b67;
-  background: radial-gradient(ellipse at center, #335b67 0%, #2c3e50 100%) fixed
+  background: radial-gradient(ellipse at center, #458693 0%, #2c3e50 100%) fixed
     no-repeat;
   font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
   color: white;
-  margin: 0px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-evenly;
-  height: 100%;
   height: 100vh;
   width: 100vw;
   align-items: center;
+  text-shadow: 2px 2px 3px rgb(33, 58, 84);
 }
 
 .johnTravolta {
@@ -30,18 +30,20 @@
 }
 
 .texto h1 {
-  margin: 0px;
   font-weight: 400;
-  font-size: 42px;
+  font-size: 44px;
   margin-bottom: 20px;
-  margin-top: 40px;
+  margin-top: 20px;
   line-height: normal;
 }
 
+.texto p {
+  font-size: 24px;
+}
+
 .navigation {
-  display: block;
   float: left;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #1f3e49;
   padding-left: 15px;
   padding-right: 15px;
   color: white;
@@ -60,58 +62,67 @@
 }
 
 .navigation:hover {
-  background-color: rgba(26, 188, 156, 0.7);
+  background-color: #232732;
   border-bottom: none;
   color: white;
 }
 
-.blueButton {
-  margin-bottom: 30px;
-  margin-top: 10px;
-  background-color: rgb(23, 81, 255);
-  border: none;
-  border-radius: 5px;
+.sobreNos {
+  background-color: #335b67;
+  background: radial-gradient(ellipse at center, #458693 0%, #2c3e50 100%) fixed
+    no-repeat;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
   color: white;
-  font-size: 18px;
-  font-weight: 300;
-  width: 200px;
-  align-self: center;
-  padding: 5px;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+  text-shadow: 2px 2px 3px rgb(33, 58, 84);
+}
+
+.sobreNos h1 {
+  margin-bottom: 40px;
+}
+.sobreNos p {
+  font-size: 20px;
+  max-width: 60%;
+}
+
+.blueButton {
+  margin-bottom: 30px !important;
+  margin-top: 10px !important;
+  background-color: #265d71 !important;
+  border: none !important;
+  border-radius: 20px !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 100 !important;
+  letter-spacing: 1px;
+  width: 200px !important;
+  align-self: center !important;
+  padding: 8px !important;
+  box-shadow: 5px 5px 5px rgb(6, 31, 57);
 }
 
 .blueButton:hover {
-  background-color: rgb(19, 70, 218);
-  text-decoration: none;
-  font-weight: 200;
-}
-
-.redButton {
-  margin-bottom: 30px;
-  margin-top: 10px;
-  background-color: rgb(166, 57, 59, 0.6);
-  border: none;
-  border-radius: 30px;
-  color: white;
-  font-size: 18px;
-  font-weight: 200;
-  width: 200px;
-  align-self: center;
-  padding: 5px;
-}
-
-.redButton:hover {
-  background-color: rgb(255, 120, 120, 0.7);
-  text-decoration: none;
-  font-weight: 300;
+  text-decoration: none !important;
+  background-color: #232732 !important;
+  font-size: 18px !important;
 }
 
 .navBar {
   background-color: #232935;
   position: fixed;
+  gap: 10px;
   top: 0;
   width: 100%;
   height: 60px;
   font-size: 32px;
+  display: flex;
+  padding-left: 130px;
 }
 
 .navBar div {
@@ -128,18 +139,18 @@
   margin: 50px;
 }
 
-.link-navbar:hover{
-  font-size:large;
+.link-navbar:hover {
+  font-size: large;
   color: white;
   font-weight: 300;
 }
 
-.profile-page{
+.profile-page {
   display: flex;
 }
 
-.barra-lateral{
-  width: 220px;
+.barra-lateral {
+  width: 350px;
   height: 100vh;
   background-image: url(./images/background.png);
   background-size: cover;
@@ -152,7 +163,7 @@
   color: white;
   font-size: 18px;
   font-weight: 200;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
@@ -164,15 +175,135 @@
   color: white;
   font-size: 18px;
   font-weight: 200;
-  margin-left: 35px;
+  margin-left: 60px;
 }
 
-.link-barra-lateral:hover{
-  font-size:large;
+.link-barra-lateral:hover {
+  font-size: large;
   color: #003366;
   font-weight: 500;
 }
 
+.modal-title {
+  color: #232935;
+  text-shadow: 2px 2px 3px gray;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 15px;
+  font-size: 30px !important;
+}
 
+.modalGrayButton {
+  margin-bottom: 30px !important;
+  background-color: rgb(200, 200, 200) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  color: black !important;
+  font-size: 16px !important;
+  letter-spacing: 1px !important;
+  width: 180px !important;
+  padding: 8px !important;
+  box-shadow: 5px 5px 5px rgb(43, 45, 48) !important;
+  font-family: "Source Sans Pro", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  margin-right: 30px !important;
+  align-self: center !important;
+}
 
+.modalGrayButton:hover {
+  text-decoration: none !important;
+  background-color: gray !important;
+  font-size: 18px !important;
+}
+
+.modal-content {
+  background-color: rgb(240, 240, 240) !important;
+}
+.modal-footer {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.form-label {
+  margin-top: 15px !important;
+}
+
+.modalConfirmButton {
+  margin-bottom: 10px !important;
+  margin-top: 30px !important;
+  align-items: right !important;
+  background-color: rgb(12, 83, 109) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  color: white !important;
+  font-size: 16px !important;
+  letter-spacing: 1px !important;
+  width: 180px !important;
+  padding: 8px !important;
+  box-shadow: 5px 5px 5px rgb(43, 45, 48) !important;
+  font-family: "Source Sans Pro", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  margin-right: 30px !important;
+  align-self: center !important;
+  display: flex;
+  position: absolute;
+}
+
+.modalConfirmButton:hover {
+  text-decoration: none !important;
+  background-color: gray !important;
+  font-size: 18px !important;
+}
+
+.avatar h1 {
+  text-shadow: 2px 2px 3px gray;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.avatar h3 {
+  text-shadow: 2px 2px 3px gray;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(32, 46, 111);
+}
+
+.user-info {
+  padding-top: 50px;
+  padding-left: 80px;
+  background-color:rgb(240, 240, 240);
+  width: 100%;
+}
+
+.user-info hr {
+  width: 80%;
+}
+
+.user-info h2 {
+  text-shadow: 2px 2px 3px gray;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(6, 31, 57);
+}
+
+.user-info span {
+  color:rgb(127, 127, 127) !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-size: 18px;
+ margin-top:10px;
+ margin-bottom:10px;
+ font-weight: 250;
+
+}
+
+.user-info p {
+  color:rgb(10, 55, 104);
+  -webkit-font-smoothing: antialiased !important;
+  font-size: 22px;
+  margin-top:10px;
+  margin-bottom:10px;
+
+}
 

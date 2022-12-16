@@ -80,7 +80,7 @@ function NewUser({handleClose}) {
       </Row>
       <Row>
         <Col>
-          <Form.Label>e-mail:</Form.Label>
+          <Form.Label>E-mail:</Form.Label>
           <Form.Control
             type="email"
             name="email"
@@ -109,7 +109,7 @@ function NewUser({handleClose}) {
             />
         </Col>            
       </Row>
-      <Button className="blueButton"
+      <Button className="modalConfirmButton"
         as="input"
         type="submit"
         value="Cadastrar"
