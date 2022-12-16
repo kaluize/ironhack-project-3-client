@@ -36,6 +36,20 @@ export function Profile() {
               <p>Reservas</p>
             </center>
         </Link>
+        {loggedInUser === "GESTOR" && (
+        <>
+        <Link to="todos">
+            <center>
+              <p>Todos os usuários</p>
+            </center>
+        </Link>
+        <Link to="meus-recursos">
+            <center>
+              <p>Reservas</p>
+            </center>
+        </Link>
+        </>
+      )}
     </div>
   </div>
 </div>
