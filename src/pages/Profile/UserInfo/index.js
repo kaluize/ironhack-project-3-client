@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import EditMeModal from "../../../components/UserComponents/EditMeModal";
 import { api } from "../../../api/api";
 
 export function UserInfo() {
   const [user, setUser] = useState({ name: "", email: "" });
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   useEffect(() => {
     async function fetchUser() {
       const response = await api.get("/user/profile");
