@@ -30,9 +30,8 @@ function BookingsPage() {
 
   return (
     <div>
-      <h1>Nova reserva</h1>
-      {/*Escolher o recurso*/}
       <Container className="border rounded mt-3">
+      <h1>Fazer nova reserva</h1>
         <Form>
           <Form.Group className="mt-3">
             <Form.Label>Qual recurso você gostaria de reservar?</Form.Label>

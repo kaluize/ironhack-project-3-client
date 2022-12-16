@@ -3,6 +3,8 @@ import { Modal, Button, Col, Form } from "react-bootstrap";
 import Horarios from "./Horarios";
 import { AuthContext } from "../../contexts/authContext.js";
 import { api } from "../../api/api";
+import toast from "react-hot-toast";
+
 
 function Agenda({ resourceId, gestorId }) {
   const [show, setShow] = useState(false);
@@ -35,9 +37,9 @@ function Agenda({ resourceId, gestorId }) {
     try {
       await api.post("/booking/new", form);
       handleClose();
-      alert("Agendamento realizado!");
+      toast.success("Agendamento realizado!");
     } catch (error) {
-      alert("Algo deu errado!");
+      toast.error("Algo deu errado!");
 
     }
   }
