@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import {  Form, Button, Row, Col } from "react-bootstrap";
 
-export function Resource({handleClose}) {
+export function EditResource({handleClose, resource}) {
     const { loggedInUser } = useContext(AuthContext);
     const [form, setForm] = useState({
       name: "",
@@ -11,13 +11,17 @@ export function Resource({handleClose}) {
       assessmentNumber: "",
       availableBooking: [],
     });
+
+    useEffect(() => {
+        setForm(resource)
+    }, [])
     function handleChange(e) {
       setForm({ ...form, [e.target.name]: e.target.value });
     }
     async function handleSubmit(e) {
       e.preventDefault();
       try {
-        await api.post("/resource/create-resource", {
+        await api.put(`/resource/edit/${resource._id}`, {
           ...form,
           gestor: loggedInUser.user._id,
         });
