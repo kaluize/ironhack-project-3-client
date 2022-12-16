@@ -1,12 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
+//import { useContext } from 'react';
 import { api } from "../../api/api";
 import { Row, Col, Container, Form, Button, ThemeProvider, FormLabel, FormControl } from "react-bootstrap";
-import { AuthContext } from "../../contexts/authContext.js";
+//import { AuthContext } from "../../contexts/authContext.js";
 
 
 function EditUser({handleClose, user}) {
 
-  const { loggedInUser } = useContext(AuthContext);
+  //const { loggedInUser } = useContext(AuthContext);
 
   const [form, setForm] = useState({
     "name":user.name,
@@ -46,6 +47,7 @@ function EditUser({handleClose, user}) {
       await api.put(`/user/edit-any/${user._id}`, form /*{ ...form, img: imgURL }*/);
 
       handleClose()
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
