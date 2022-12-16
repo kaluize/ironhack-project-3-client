@@ -15,29 +15,36 @@ export function UserInfo() {
     fetchUser();
   }, []);
 
-  function handleLogOut() {
-    localStorage.removeItem("loggedInUser");
-    navigate("/");
-  }
+  // function handleLogOut() {
+  //   localStorage.removeItem("loggedInUser");
+  //   navigate("/");
+  // }
 
   return (
-    
-    
-
-    <>
-      <h1>{user.name}</h1>
+    <div className="user-info">
+      <h2>MEUS DADOS</h2>
+      <br></br>
+      <br></br>
+      <h5>Nome do usuário:</h5>
+      <p>{user.name}</p>
+      <hr></hr>
+      <h5>Email:</h5>
       <p>{user.email}</p>
+      <hr></hr>
+      <h5>Matrícula:</h5>
       <p>Matrícula: {user.idNumber}</p>
-      {user.booking && user.booking.map((booking, index) => {
-        return (
-          <div key={user.email}>
-            <p>{booking.resource}</p>
-            <p>{booking.date}</p>
-          </div>
-        )
-      })}
-      <EditMeModal user={user}/>
-      <button onClick={handleLogOut}>Sair</button>
-    </>
+      {user.booking &&
+        user.booking.map((booking, index) => {
+          return (
+            <div key={user.email}>
+              <p>{booking.resource}</p>
+              <p>{booking.date}</p>
+            </div>
+          );
+        })}
+      <EditMeModal user={user} />
+      <br></br>
+      {/* <button onClick={handleLogOut}>Sair</button> */}
+    </div>
   );
 }

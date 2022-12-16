@@ -269,3 +269,31 @@
   -webkit-font-smoothing: antialiased;
   color: rgb(32, 46, 111);
 }
+
+.user-info {
+  padding-top: 50px;
+  padding-left: 80px;
+  background-color:rgb(240, 240, 240);
+  width: 100%;
+}
+
+.user-info hr {
+  width: 80%;
+}
+
+.user-info h3 {
+  text-shadow: 2px 2px 3px gray;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(6, 31, 57);
+}
+
+.user-info h5 {
+  color:#232732;
+  -webkit-font-smoothing: antialiased;
+}
+
+.user-info p {
+  color:rgb(6, 31, 57);
+  -webkit-font-smoothing: antialiased;
+}
