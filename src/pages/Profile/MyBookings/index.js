@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { Card, Container, Form, Col, Row } from "react-bootstrap";
+import { Card, Container, Col, Row } from "react-bootstrap";
 import { api } from "../../../api/api";
 import CancelarBooking from "../../Bookings/CancelarBooking";
 import EditarBooking from "../../Bookings/EditarBooking";
