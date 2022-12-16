@@ -1,35 +1,39 @@
-import axios from "axios";
+import { api } from "../../api/api";
 import { useState, useEffect } from "react";
+import NewResourceModal from "../../components/ResourceComponents/NewResourceModal.js";
 
 
-export function Home (){
-  const [users, setUsers] = useState([]);
+
+export function Resources(){
+  const [resources, setResources] = useState([]);
+  //const [reload, setReload] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  
+
   useEffect(() => {
-    async function fetchUsers() {
+    async function fetchResources() {
       try {
-        const response = await axios.get("http://localhost:8080/user/all-users");
-        setUsers(response.data)
-        setIsLoading(false)
+        const response = await api.get("/resource/all-resource");
+        setResources(response.data);
+        setIsLoading(false);
       } catch (error) {
-          console.log(error)
+        console.log(error);
       }
     }
-
-    fetchUsers();
-  }, [])
-
-  console.log(users)
+    fetchResources();
+  }, []);
 
   return (
     <div>
       {!isLoading && (
         <>
-          {users.map((user) => {
+          <h3>Recursos cadastrados</h3>
+          <NewResourceModal />
+          {resources.map((resource) => {
             return (
-              <div>
-                {user.name} - {user.idNumber} - {user.email}
+              <div key={resource._id}>
+                {resource.name} - {resource.assessmentNumber}
               </div>
             )
           })}

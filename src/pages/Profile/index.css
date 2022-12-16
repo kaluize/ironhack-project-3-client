@@ -1,0 +1,32 @@
+* {
+    box-sizing:content-box;
+}
+
+.profile-container {
+    padding: 50px 60px;
+    display: flex;
+}
+
+.profile-options {
+    display: flex;
+    gap: 60px;
+    padding-top: 120px;
+  
+}
+
+.dash-portfolio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.olaFulano {
+    border-bottom: 1px solid black;
+    position: fixed;
+    width: 90%;
+    background-color: #ebebeb;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+}
