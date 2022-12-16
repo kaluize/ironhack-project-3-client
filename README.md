@@ -1,6 +1,6 @@
 
 
-<h1 align="center">📇 ReservasGovBr</h1>
+<h1 align="center">📇 ReservasGov</h1>
 
 ## :memo: Descrição
 Projeto desenvolvido como didática de front-end para a turma Bootcamp Web Dev T4/22/Enap/ Ironhack com conteúdos que englobam o universo da criação de um sistema de reservas de recursos (equipamentos e salas), para ser usado nos órgão do Governo. 
