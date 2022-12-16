@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { AuthContext } from "../../../contexts/authContext";
+import React, { useState, useEffect } from 'react';
+//import { AuthContext } from "../../../contexts/authContext";
+//import { useContext } from 'react';
 import { api } from "../../../api/api";
 import { Card, Button, Container, Table } from "react-bootstrap";
 import EditUserModal from "../../../components/UserComponents/EditUserModal";
@@ -8,7 +9,7 @@ function AllUsers() {
   const [users, setUsers] = useState([]);
   const [isloading, setIsloading] = useState(true);
 
-  const { loggedInUser } = useContext(AuthContext);
+  //const { loggedInUser } = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchUser() {
