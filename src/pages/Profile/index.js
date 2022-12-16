@@ -34,6 +34,7 @@ export function Profile() {
         <div>
             <p><Link className="link-barra-lateral" to="meus-dados" >Meus dados</Link></p>
             <p><Link className="link-barra-lateral" to="minhas-reservas" >Minhas reservas</Link></p>
+            <p><Link className="link-barra-lateral" to="fazer-reserva" >Fazer Reserva</Link></p>
             {loggedInUser.user.role === "GESTOR" &&
             (<>
               <p><Link className="link-barra-lateral" to="meus-recursos" >Ver recursos</Link></p>
