@@ -74,10 +74,10 @@
   font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
   color: white;
-  padding: 100px;
+  padding-left: 150px;
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   height: 100vh;
   width: 100vw;
   text-shadow: 2px 2px 3px rgb(33, 58, 84);
