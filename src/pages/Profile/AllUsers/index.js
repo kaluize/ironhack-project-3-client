@@ -59,7 +59,7 @@ function AllUsers() {
                                 <td>{user.role}</td>
                                 <td>{user.email}</td>
                                 <td><EditUserModal user={user}/></td>
-                                <td><Button className="button-user-ex" onClick={() => {
+                                <td><Button variant="danger" onClick={() => {
                                     handleDelete(user._id)}}>Excluir</Button>
                                 </td>                                
                             </tr>
