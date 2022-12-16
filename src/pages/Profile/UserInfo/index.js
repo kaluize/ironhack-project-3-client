@@ -25,13 +25,13 @@ export function UserInfo() {
       <h2>MEUS DADOS</h2>
       <br></br>
       <br></br>
-      <h5>Nome do usuário:</h5>
+      <span>Nome do usuário:</span>
       <p>{user.name}</p>
       <hr></hr>
-      <h5>Email:</h5>
+      <span>Email:</span>
       <p>{user.email}</p>
       <hr></hr>
-      <h5>Matrícula:</h5>
+      <span>Matrícula:</span>
       <p>Matrícula: {user.idNumber}</p>
       {user.booking &&
         user.booking.map((booking, index) => {
@@ -42,6 +42,8 @@ export function UserInfo() {
             </div>
           );
         })}
+        <br></br>
+
       <EditMeModal user={user} />
       <br></br>
       {/* <button onClick={handleLogOut}>Sair</button> */}

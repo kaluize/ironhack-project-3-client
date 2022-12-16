@@ -94,7 +94,7 @@
 .blueButton {
   margin-bottom: 30px !important;
   margin-top: 10px !important;
-  background-color: #1f3e49 !important;
+  background-color: #265d71 !important;
   border: none !important;
   border-radius: 20px !important;
   color: white !important;
@@ -150,7 +150,7 @@
 }
 
 .barra-lateral {
-  width: 220px;
+  width: 350px;
   height: 100vh;
   background-image: url(./images/background.png);
   background-size: cover;
@@ -175,7 +175,7 @@
   color: white;
   font-size: 18px;
   font-weight: 200;
-  margin-left: 35px;
+  margin-left: 60px;
 }
 
 .link-barra-lateral:hover {
@@ -281,19 +281,29 @@
   width: 80%;
 }
 
-.user-info h3 {
+.user-info h2 {
   text-shadow: 2px 2px 3px gray;
   font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
   color: rgb(6, 31, 57);
 }
 
-.user-info h5 {
-  color:#232732;
-  -webkit-font-smoothing: antialiased;
+.user-info span {
+  color:rgb(127, 127, 127) !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-size: 18px;
+ margin-top:10px;
+ margin-bottom:10px;
+ font-weight: 250;
+
 }
 
 .user-info p {
-  color:rgb(6, 31, 57);
-  -webkit-font-smoothing: antialiased;
+  color:rgb(10, 55, 104);
+  -webkit-font-smoothing: antialiased !important;
+  font-size: 22px;
+  margin-top:10px;
+  margin-bottom:10px;
+
 }
+

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import EditMe from "./EditMe.js"
+import "../../../src/app.css"
 
 function EditMeModal({user}) {
   const [show, setShow] = useState(false);
