@@ -12,7 +12,7 @@ function NewResourceModal() {
   return (
     <>
       <Button className="blueButton" variant="primary" onClick={handleShow}>
-        CADASTRE-SE
+        Novo Recurso
       </Button>
 
       <Modal show={show} onHide={handleClose}>
