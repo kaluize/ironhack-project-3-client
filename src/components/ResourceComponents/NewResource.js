@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
-import {  Form, Button } from "react-bootstrap";
+import {  Form, Button, Row, Col } from "react-bootstrap";
 
-export function Resource() {
+export function Resource({handleClose}) {
     const { loggedInUser } = useContext(AuthContext);
     const [form, setForm] = useState({
       name: "",
@@ -28,6 +28,7 @@ export function Resource() {
           gestor: "",
           availableBooking: [],
         });
+        handleClose()
       } catch (error) {
         console.log(error);
       }
@@ -162,6 +163,8 @@ export function Resource() {
               onChange={handleChange}
             />
           </Form.Group>
+        <Row>
+        <Col>
           <Form.Group>
             <Form.Label>Dias da Semana</Form.Label>
             {segunda.map((element) => {
@@ -179,6 +182,8 @@ export function Resource() {
               );
             })}
           </Form.Group>
+          </Col>
+          <Col>
           <Form.Group>
             <Form.Label>Dias da Semana</Form.Label>
             {terça.map((element) => {
@@ -196,6 +201,8 @@ export function Resource() {
               );
             })}
           </Form.Group>
+          </Col>
+          <Col>
           <Form.Group>
             <Form.Label>Dias da Semana</Form.Label>
             {quarta.map((element) => {
@@ -213,6 +220,8 @@ export function Resource() {
               );
             })}
           </Form.Group>
+          </Col>
+          <Col>
           <Form.Group>
             <Form.Label>Dias da Semana</Form.Label>
             {quinta.map((element) => {
@@ -230,6 +239,8 @@ export function Resource() {
               );
             })}
           </Form.Group>
+          </Col>
+          <Col>
           <Form.Group>
             <Form.Label>Dias da Semana</Form.Label>
             {sexta.map((element) => {
@@ -247,6 +258,8 @@ export function Resource() {
               );
             })}
           </Form.Group>
+          </Col>
+        </Row>
           <Button
             as="input"
             type="submit"
