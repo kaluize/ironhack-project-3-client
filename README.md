@@ -31,6 +31,13 @@ npm start
 ## :dart: Status do projeto
 O projeto está funcionando
 
-## :wrench: Desenvolvedores GitHub
+## :rocket: Desenvolvedores GitHub
+* <b> AnaAleixo
+* <b> Márcio Silva
+* <b> Vitor Martins
+* <b> Rodrigo Sotolani
+* <b> karen Ortiz
+  
+
 
 
