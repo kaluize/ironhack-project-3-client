@@ -25,7 +25,7 @@ function ModalNewUser() {
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button className="redButton" variant="secondary" onClick={handleClose}>
             Sair
           </Button>
         </Modal.Footer>
