@@ -13,14 +13,14 @@ function Agenda({ resourceId, gestorId }) {
   const handleShow = () => setShow(true);
 
   const [isDate, setIsDate] = useState(false);
+  console.log("gestor ID", gestorId);
 
   const [form, setForm] = useState({
     data: "",
     user: loggedInUser.user._id,
-    //user: "639a31b0b592415aa66c2603",
     resource: resourceId,
     schedule: "",
-    gestor: gestorId._id
+    gestor: gestorId
   });
 
   function handleChange(e) {

@@ -9,7 +9,7 @@ function BookingsPage() {
   //const [reload, setReload] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  
+  console.log(resources);
 
   useEffect(() => {
     async function fetchResources() {
@@ -58,6 +58,7 @@ function BookingsPage() {
                   .includes(search.toLowerCase())
             )
             .map((resource) => {
+              console.log("resource gestor", resource.gestor);
               return (
                 <Card key={resource._id} className="m-4">
                   <Card.Body>
@@ -67,7 +68,7 @@ function BookingsPage() {
                     <p>{resource.availableBooking}</p>
                   </Card.Body>
                   <Card.Footer>
-                    <Agenda resourceId={resource._id} gestorId={resource.gestor}/>
+                    <Agenda resourceId={resource._id} gestorId={resource.gestor._id}/>
                   </Card.Footer>
                 </Card>
               );
