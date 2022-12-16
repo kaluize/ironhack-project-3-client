@@ -6,7 +6,7 @@ import NewResourceModal from "../../components/ResourceComponents/NewResourceMod
 
 export function Resources(){
   const [resources, setResources] = useState([]);
-  const [reload, setReload] = useState(false);
+  //const [reload, setReload] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   
@@ -22,7 +22,7 @@ export function Resources(){
       }
     }
     fetchResources();
-  }, [reload]);
+  }, []);
 
   return (
     <div>
