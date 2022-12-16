@@ -1,40 +1,41 @@
-import axios from "axios";
+import { api } from "../../../api/api";
 import { useState, useEffect } from "react";
 
-
-export function Home (){
-  const [users, setUsers] = useState([]);
+function Resources() {
+  const [resources, setResources] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchUsers() {
+    async function fetchResources() {
       try {
-        const response = await axios.get("http://localhost:8080/user/all-users");
-        setUsers(response.data)
-        setIsLoading(false)
+        const response = await await api.get("/user/all-users");
+        setResources(response.data);
+        setIsLoading(false);
       } catch (error) {
-          console.log(error)
+        console.log(error);
       }
     }
 
-    fetchUsers();
-  }, [])
+    fetchResources();
+  }, []);
 
-  console.log(users)
+  console.log(resources);
 
   return (
     <div>
       {!isLoading && (
         <>
-          {users.map((user) => {
+          {resources.map((user) => {
             return (
               <div>
                 {user.name} - {user.idNumber} - {user.email}
               </div>
-            )
+            );
           })}
         </>
       )}
     </div>
   );
 }
+
+export default Resources;
