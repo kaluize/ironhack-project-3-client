@@ -33,7 +33,7 @@ export function Resources(){
           {resources.map((resource) => {
             return (
               <div key={resource._id}>
-                {resource.name} - {resource.assessmentNumber}
+                {resource.name} - {resource.assessmentNumber} - {resource.gestor.name}
               </div>
             )
           })}
