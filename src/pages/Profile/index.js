@@ -29,7 +29,7 @@ export function Profile() {
       <div className="barra-lateral">
         <div className="avatar">
         <h1>{loggedInUser.user.name}</h1>
-        <h3>{loggedInUser.user.role.toLowerCase()}</h3>
+        <h3>{loggedInUser.user.role}</h3>
         </div>
         <div>
             <p><Link className="link-barra-lateral" to="meus-dados" >Meus dados</Link></p>
