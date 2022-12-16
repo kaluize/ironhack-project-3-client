@@ -41,7 +41,7 @@ export function Profile() {
               <p><Link className="link-barra-lateral" to="todos" >Usuários</Link></p>
               <ModalNewGestor />
             </>)}
-            <p onClick={handleLogOut}>Sair</p>
+            <p className="link-barra-lateral" onClick={handleLogOut}>Sair</p>
         </div>
       </div>
 
