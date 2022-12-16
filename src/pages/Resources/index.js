@@ -2,6 +2,7 @@ import { api } from "../../api/api";
 import { useState, useEffect } from "react";
 import { Card, Container, Form, Row, Col, Button } from "react-bootstrap";
 import NewResourceModal from "../../components/ResourceComponents/NewResourceModal.js";
+import EditResourceModal from "../../components/ResourceComponents/EditResourceModal.js";
 
 
 
@@ -11,11 +12,7 @@ export function Resources(){
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
 
-  const [form, setForm] = useState({
 
-  })
-
-  
 
   useEffect(() => {
     async function fetchResources() {
@@ -79,7 +76,7 @@ export function Resources(){
                   <Card.Footer>
                     <Row>
                       <Col>
-                        <Button resource={resource} /> 
+                        <EditResourceModal resource={resource} /> 
                       </Col>
                       <Col>
                       <Button variant="danger" onClick={ () => handleDelete(resource._id)}> 

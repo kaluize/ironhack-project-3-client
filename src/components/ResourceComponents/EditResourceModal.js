@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { Resource } from "./NewResource.js"
+import { EditResource } from "./EditResource.js"
 import "../../app.css"
 
 function EditResourceModal({resource}) {
@@ -12,16 +12,17 @@ function EditResourceModal({resource}) {
   return (
     <>
       <Button className="blueButton" variant="primary" onClick={handleShow}>
-        eDITAR
+        Editar
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Editar resource</Modal.Title>
+          <Modal.Title>Editar recurso</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Resource
+          <EditResource
             handleClose={handleClose}
+            resource={resource} 
           />
         </Modal.Body>
         <Modal.Footer>
