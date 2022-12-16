@@ -6,7 +6,7 @@ import Agenda from "./Agenda"
 function BookingsPage() {
   const [search, setSearch] = useState("");
   const [resources, setResources] = useState([]);
-  const [reload, setReload] = useState(false);
+  //const [reload, setReload] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   
@@ -22,7 +22,7 @@ function BookingsPage() {
       }
     }
     fetchResources();
-  }, [reload]);
+  }, []);
 
   function handleSearch(e) {
     setSearch(e.target.value);

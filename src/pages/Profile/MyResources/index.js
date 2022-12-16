@@ -1,6 +1,10 @@
+import { Resources } from "../../Resources";
+
 function MyResources() {
     return (
-        <></>
+        <>
+            <Resources />
+        </>
     );
 }
 
