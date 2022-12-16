@@ -6,7 +6,7 @@ import { ErrorPage } from "./pages/ErrorPage/index.js";
 import BookingsPage from "./pages/Bookings/index.js";
 import About from "./pages/About/index.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 import { Resources } from "./pages/Resources/index.js";
 import { ProtectedRoute } from "./components/ProtectedRoute/index.js";
@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       <AuthContextComponent>
+        <Toaster />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile/*" element={<ProtectedRoute Component={Profile} />}/>
