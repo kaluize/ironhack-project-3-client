@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Modal, Button, Col, Form } from "react-bootstrap";
 import { api } from "../../api/api";
+import toast from "react-hot-toast";
+
 
 function AprovarBooking( { bookingId, reload, setReload, form, setForm, agendamento }) {
 
@@ -17,9 +19,9 @@ function AprovarBooking( { bookingId, reload, setReload, form, setForm, agendame
       await api.put(`/booking/aprove/${bookingId}`, {...form, status: "Reservado"});
       handleClose();
       setReload(!reload);
-      alert("Agendamento autorizado com sucesso!");
+      toast.success("Agendamento autorizado com sucesso!");
     } catch (error) {
-      alert("Algo deu errado!");
+      toast.error("Algo deu errado!");
     }
   }
 
@@ -27,7 +29,7 @@ function AprovarBooking( { bookingId, reload, setReload, form, setForm, agendame
   return ( 
     <div>
       <Button variant="success" onClick={handleShow}>
-          Aprovar agendamento
+          Aprovar
       </Button>
 
       <Modal show={show} onHide={handleClose}>
