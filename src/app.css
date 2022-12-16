@@ -16,8 +16,6 @@
   text-shadow: 2px 2px 3px rgb(33, 58, 84);
 }
 
-
-
 .johnTravolta {
   background-image: johnTravolta;
 }
@@ -45,7 +43,7 @@
 
 .navigation {
   float: left;
-  background-color: #1f3e49 ;
+  background-color: #1f3e49;
   padding-left: 15px;
   padding-right: 15px;
   color: white;
@@ -67,7 +65,6 @@
   background-color: #232732;
   border-bottom: none;
   color: white;
-  
 }
 
 .sobreNos {
@@ -83,17 +80,15 @@
   justify-content: space-evenly;
   height: 100vh;
   width: 100vw;
-  text-shadow: 2px 2px 3px rgb(33, 58, 84)
-
+  text-shadow: 2px 2px 3px rgb(33, 58, 84);
 }
 
-.sobreNos h1{
+.sobreNos h1 {
   margin-bottom: 40px;
 }
 .sobreNos p {
   font-size: 20px;
   max-width: 60%;
-  
 }
 
 .blueButton {
@@ -118,35 +113,15 @@
   font-size: 18px !important;
 }
 
-.redButton {
-  margin-bottom: 30px;
-  margin-top: 10px;
-  background-color: rgb(166, 57, 59, 0.6);
-  border: none;
-  border-radius: 30px;
-  color: white;
-  font-size: 18px;
-  font-weight: 200;
-  width: 200px;
-  align-self: center;
-  padding: 5px;
-}
-
-.redButton:hover {
-  background-color: rgb(255, 120, 120, 0.7);
-  text-decoration: none;
-  font-weight: 300;
-}
-
 .navBar {
   background-color: #232935;
   position: fixed;
-  gap:10px;
+  gap: 10px;
   top: 0;
   width: 100%;
   height: 60px;
   font-size: 32px;
-  display:flex;
+  display: flex;
   padding-left: 130px;
 }
 
@@ -207,4 +182,90 @@
   font-size: large;
   color: #003366;
   font-weight: 500;
+}
+
+.modal-title {
+  color: #232935;
+  text-shadow: 2px 2px 3px gray;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 15px;
+  font-size: 30px !important;
+}
+
+.modalGrayButton {
+  margin-bottom: 30px !important;
+  background-color: rgb(200, 200, 200) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  color: black !important;
+  font-size: 16px !important;
+  letter-spacing: 1px !important;
+  width: 180px !important;
+  padding: 8px !important;
+  box-shadow: 5px 5px 5px rgb(43, 45, 48) !important;
+  font-family: "Source Sans Pro", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  margin-right: 30px !important;
+  align-self: center !important;
+}
+
+.modalGrayButton:hover {
+  text-decoration: none !important;
+  background-color: gray !important;
+  font-size: 18px !important;
+}
+
+.modal-content {
+  background-color: rgb(240, 240, 240) !important;
+}
+.modal-footer {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.form-label {
+  margin-top: 15px !important;
+}
+
+.modalConfirmButton {
+  margin-bottom: 10px !important;
+  margin-top: 30px !important;
+  align-items: right !important;
+  background-color: rgb(12, 83, 109) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  color: white !important;
+  font-size: 16px !important;
+  letter-spacing: 1px !important;
+  width: 180px !important;
+  padding: 8px !important;
+  box-shadow: 5px 5px 5px rgb(43, 45, 48) !important;
+  font-family: "Source Sans Pro", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  margin-right: 30px !important;
+  align-self: center !important;
+  display: flex;
+  position: absolute;
+}
+
+.modalConfirmButton:hover {
+  text-decoration: none !important;
+  background-color: gray !important;
+  font-size: 18px !important;
+}
+
+.avatar h1 {
+  text-shadow: 2px 2px 3px gray;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.avatar h3 {
+  text-shadow: 2px 2px 3px gray;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(22, 35, 93);
 }
