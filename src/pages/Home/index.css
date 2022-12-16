@@ -3,8 +3,11 @@
     height: 100vh;
     width: 100%;
     background-image: url(../../images/background.png);
+    background: radial-gradient(ellipse at center, #458693 0%, #2c3e50 100%) fixed
+    no-repeat;
     background-size: cover;
     background-position: bottom;
+    margin-bottom: 30px;
     display: flex;
 
   }
@@ -20,7 +23,10 @@
   .texto-home h1 {
     font-size: 60px;
     color: white;
-    font-weight: 700;
+    font-family: "Source Sans Pro", sans-serif;
+    text-shadow: 5px 5px 15px black;
+    -webkit-font-smoothing: antialiased;
+
 
   }
 
@@ -29,7 +35,7 @@
     justify-self: center;
     margin: 40px  20px  40px  100px;
     border-radius: 50px;
-    background-color: rgb(200, 200, 200, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     width: 30%;
     height: 550px;
     padding-top: 10px;
@@ -44,10 +50,9 @@
   }
 
   .login-box h4{
-    font-weight: 200;
+    font-weight: 250;
     margin-top: 30px;
-
-
+    -webkit-font-smoothing: antialiased;
   }
 
   .form {
@@ -61,10 +66,16 @@
     width: 100%;
     background-color: rgb(200, 200, 200, 0.01);
     margin-top: 20px;
+    padding-left: 5px;
     border-width: 0px  0px  1px  0px;
+    border-color: rgba(16, 64, 85, 0.6);
     height: 35px;
     min-width: 220px;
     font-weight: 200;
     font-size: 20px;
+  }
+
+  ::placeholder {
+    color: rgba(16, 64, 85, 1)
   }
 

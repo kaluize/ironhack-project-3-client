@@ -10,7 +10,7 @@ function EditUserModal({loggedInUser, user}) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="button-modal">
+      <Button variant="primary" onClick={handleShow} className="blueButton" >
         Editar
       </Button>
 
